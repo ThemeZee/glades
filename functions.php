@@ -19,21 +19,6 @@ function cardigan_enqueue_scripts() {
 
 	// Register and enqueue navigation.js
 	wp_enqueue_script('cardigan-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
-		
-	// Register and Enqueue FlexSlider JS and CSS if necessary
-	if ( ( isset($theme_options['slider_active_blog']) and $theme_options['slider_active_blog'] == true )
-		|| ( isset($theme_options['slider_active_magazine']) and $theme_options['slider_active_magazine'] == true ) ) :
-
-		// FlexSlider CSS
-		wp_enqueue_style('cardigan-flexslider', get_template_directory_uri() . '/css/flexslider.css');
-
-		// FlexSlider JS
-		wp_enqueue_script('cardigan-flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array('jquery'));
-
-		// Register and enqueue slider.js
-		wp_enqueue_script('cardigan-post-slider', get_template_directory_uri() .'/js/slider.js', array('cardigan-flexslider'));
-
-	endif;
 
 	// Register and Enqueue Fonts
 	wp_enqueue_style('cardigan-default-fonts', cardigan_google_fonts_url(), array(), null );
@@ -53,7 +38,7 @@ function cardigan_enqueue_comment_reply() {
 // Retrieve Font URL to register default Google Fonts
 function cardigan_google_fonts_url() {
     
-	$font_families = array('Muli', 'Oswald');
+	$font_families = array('PT Sans:700,400', 'Contrail One');
 
 	$query_args = array(
 		'family' => urlencode( implode( '|', $font_families ) ),
@@ -62,7 +47,7 @@ function cardigan_google_fonts_url() {
 
 	$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 
-    return apply_filters( 'cardigan-fonts-url', $fonts_url );
+    return apply_filters( 'cardigan_google_fonts_url', $fonts_url );
 }
 
 
@@ -98,7 +83,7 @@ function cardigan_setup() {
 	// Add theme support for Jetpack Featured Content
 	add_theme_support( 'featured-content', array(
 		'featured_content_filter' => 'cardigan_get_featured_content',
-		'max_posts'  => 20
+		'max_posts'  => 3
 		)
 	);
 	
@@ -129,8 +114,9 @@ function cardigan_add_image_sizes() {
 	// Add Custom Header Image Size
 	add_image_size( 'custom-header-image', 1320, 250, true);
 	
-	// Add Slider Image Size
-	add_image_size( 'slider-image', 1320, 380, true);
+	// Add Featured Content Image Sizes
+	add_image_size( 'featured-content-left', 780, 420, true);
+	add_image_size( 'featured-content-right', 460, 200, true);
 	
 	// Add Category Post Widget image sizes
 	add_image_size( 'category-posts-widget-small', 140, 90, true);
@@ -207,6 +193,12 @@ function cardigan_default_menu() {
 // Get Featured Posts
 function cardigan_get_featured_content() {
 	return apply_filters( 'cardigan_get_featured_content', false );
+}
+
+
+// Check if featured posts exists
+function cardigan_has_featured_content() {
+	return ! is_paged() && (bool) cardigan_get_featured_content();
 }
 
 

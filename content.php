@@ -8,7 +8,7 @@
 		<?php cardigan_display_thumbnail_index(); ?>
 		
 		<div class="entry clearfix">
-			<?php the_content(__('Read more', 'cardigan')); ?>
+			<?php the_content(__('Continue reading &raquo;', 'cardigan')); ?>
 			<div class="page-links"><?php wp_link_pages(); ?></div>
 		</div>
 

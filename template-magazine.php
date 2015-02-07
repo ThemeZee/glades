@@ -5,18 +5,18 @@ Template Name: Magazine Homepage
 ?>
 <?php get_header(); ?>
 	
-<?php // Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
-	
-	// Display Featured Post Slideshow if activated
-	if ( isset($theme_options['slider_active_magazine']) and $theme_options['slider_active_magazine'] == true ) :
-
-		get_template_part( 'featured-content-slider' );
-
-	endif; 
-?>
-	
 	<div id="wrap" class="container clearfix template-magazine">
+	
+		<?php // Get Theme Options from Database
+			$theme_options = cardigan_theme_options();
+			
+			// Display Featured Post Slideshow if activated
+			if ( isset($theme_options['slider_active_magazine']) and $theme_options['slider_active_magazine'] == true ) :
+
+				get_template_part( 'featured-content' );
+
+			endif; 
+		?>
 	
 		<section id="content" class="primary" role="main">
 		

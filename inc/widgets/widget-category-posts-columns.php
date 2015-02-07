@@ -198,7 +198,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 						<div class="small-post-content">
 							
 							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>						
-							<div class="postmeta-small"><?php $this->display_postmeta($instance); ?></div>
+							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
 							
 						</div>
 
@@ -266,7 +266,6 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 				$link_url = esc_url( get_category_link( $category_id ) );
 				
 				echo '<a href="'. esc_url( get_category_link( $category_id ) ) .'" title="'. $widget_title . '">'. $widget_title . '</a>';
-				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="genericon-next"></span></a>';
 				
 			else:
 			

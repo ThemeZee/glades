@@ -9,7 +9,7 @@
 
 		<div class="entry clearfix">
 			<?php the_excerpt(); ?>
-			<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Read more', 'cardigan'); ?></a>
+			<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'cardigan'); ?></a>
 		</div>
 
 	</article>
