@@ -30,7 +30,7 @@ $loop_count = 1;
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						
 						<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
-							<?php the_post_thumbnail('featured-content-left'); ?>
+							<?php the_post_thumbnail('cardigan-featured-content-left'); ?>
 						</a>
 						
 						<div class="post-content">
@@ -57,7 +57,7 @@ $loop_count = 1;
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						
 						<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
-							<?php the_post_thumbnail('featured-content-right'); ?>
+							<?php the_post_thumbnail('cardigan-featured-content-right'); ?>
 						</a>
 						
 						<div class="post-content">

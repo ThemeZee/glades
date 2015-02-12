@@ -66,9 +66,12 @@ function cardigan_setup() {
 	load_theme_textdomain('cardigan', get_template_directory() . '/languages' );
 
 	// Add Theme Support
-	add_theme_support('post-thumbnails');
 	add_theme_support('automatic-feed-links');
 	add_editor_style();
+	
+	// Add Post Thumbnails
+	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size( 400, 280, true );
 	
 	// Add Custom Background
 	add_theme_support('custom-background', array('default-color' => 'e5e5e5'));
@@ -108,21 +111,19 @@ add_action( 'after_setup_theme', 'cardigan_add_image_sizes' );
 if ( ! function_exists( 'cardigan_add_image_sizes' ) ):
 function cardigan_add_image_sizes() {
 	
-	// Add Post Thumbnail Size
-	add_image_size( 'post-thumbnail', 400, 280, true);
-	
 	// Add Custom Header Image Size
-	add_image_size( 'custom-header-image', 1320, 250, true);
+	add_image_size( 'cardigan-header-image', 1320, 250, true);
 	
 	// Add Featured Content Image Sizes
-	add_image_size( 'featured-content-left', 780, 420, true);
-	add_image_size( 'featured-content-right', 460, 200, true);
+	add_image_size( 'cardigan-featured-content-left', 780, 420, true);
+	add_image_size( 'cardigan-featured-content-right', 460, 200, true);
 	
 	// Add Category Post Widget image sizes
-	add_image_size( 'category-posts-widget-small', 140, 90, true);
-	add_image_size( 'category-posts-widget-medium', 300, 175, true);
-	add_image_size( 'category-posts-widget-large', 600, 280, true);
-	add_image_size( 'category-posts-widget-extra-large', 600, 350, true);
+	add_image_size( 'cardigan-category-posts-widget-small', 140, 90, true);
+	add_image_size( 'cardigan-category-posts-widget-medium', 300, 175, true);
+	add_image_size( 'cardigan-category-posts-widget-large', 600, 280, true);
+	add_image_size( 'cardigan-category-posts-widget-extra-large', 600, 350, true);
+	
 }
 endif;
 
