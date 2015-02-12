@@ -5,7 +5,18 @@
  */
 
 // Get our Featured Content posts
-$slider_posts = cardigan_get_featured_content(); 
+$featured_posts = cardigan_get_featured_content();
+
+// Check if there is Featured Content
+if ( empty( $featured_posts ) and current_user_can( 'edit_theme_options' ) ) : ?>
+
+	<p class="featured-content-empty-posts">
+		<?php _e('There are no posts available to be displayed in the featured content section. To set up your featured posts, go to Appearance -> Customize -> Theme Options, and add a tag under Tag Name in the Featured Content section. The featured content section will then display all posts which are tagged with that keyword.', 'cardigan'); ?>
+	</p>
+	
+<?php
+	return;
+endif;
 
 // Limit the number of words in slideshow post excerpts
 add_filter('excerpt_length', 'cardigan_featured_content_excerpt_length');
@@ -18,7 +29,7 @@ $loop_count = 1;
 	<div id="featured-content" class="clearfix">
 
 		<?php // Display Featured Content
-		foreach ( $slider_posts as $post ) : setup_postdata( $post ); 
+		foreach ( $featured_posts as $post ) : setup_postdata( $post ); 
 		
 			// Display first featured post (big)
 			if(isset($loop_count) and $loop_count == 1) : ?>
