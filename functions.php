@@ -71,7 +71,7 @@ function cardigan_setup() {
 	
 	// Add Post Thumbnails
 	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size( 400, 280, true );
+	set_post_thumbnail_size( 900, 280, true );
 	
 	// Add Custom Background
 	add_theme_support('custom-background', array('default-color' => 'e5e5e5'));
@@ -115,8 +115,8 @@ function cardigan_add_image_sizes() {
 	add_image_size( 'cardigan-header-image', 1320, 250, true);
 	
 	// Add Featured Content Image Sizes
-	add_image_size( 'cardigan-featured-content-left', 780, 420, true);
-	add_image_size( 'cardigan-featured-content-right', 460, 200, true);
+	add_image_size( 'cardigan-featured-content-left', 820, 370, true);
+	add_image_size( 'cardigan-featured-content-right', 425, 175, true);
 	
 	// Add Category Post Widget image sizes
 	add_image_size( 'cardigan-category-posts-widget-small', 140, 90, true);
@@ -228,21 +228,6 @@ function cardigan_category_posts_medium_excerpt($length) {
 // Category Posts Small Excerpt Length
 function cardigan_category_posts_small_excerpt($length) {
     return 8;
-}
-
-// Change Excerpt More
-add_filter('excerpt_more', 'cardigan_excerpt_more');
-function cardigan_excerpt_more($more) {
-    
-	// Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
-
-	// Return Excerpt Text
-	if ( isset($theme_options['excerpt_text']) and $theme_options['excerpt_text'] == true ) :
-		return ' [...]';
-	else :
-		return '';
-	endif;
 }
 
 

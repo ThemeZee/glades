@@ -30,8 +30,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 		$defaults = array(
 			'title'				=> '',
 			'category'			=> 0,
-			'layout'			=> 'horizontal',
-			'category_link'		=> false
+			'layout'			=> 'horizontal'
 		);
 		
 		return $defaults;
@@ -164,7 +163,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 							<div class="entry">
 								<?php the_excerpt(); ?>
-								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Read more', 'cardigan'); ?></a>
+								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'cardigan'); ?></a>
 							</div>
 							
 						</div>
@@ -249,7 +248,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 							<div class="entry">
 								<?php the_excerpt(); ?>
-								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Read more', 'cardigan'); ?></a>
+								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'cardigan'); ?></a>
 							</div>
 							
 						</div>
@@ -330,18 +329,18 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 		if( !empty( $widget_title ) ) :
 		
 			echo $before_title;
+					
+			// Check if "All Categories" is selected
+			if( $category == 0 ) :
 			
-			// Link Category Title
-			if( $category_link == true ) : 
+				echo $widget_title;
+
+			else:
 			
 				$link_title = sprintf( __('View all posts from category %s', 'cardigan'), get_cat_name( $category ) );
 				$link_url = esc_url( get_category_link( $category ) );
 				
 				echo '<a href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a>';
-			
-			else:
-			
-				echo $widget_title;
 			
 			endif;
 			
@@ -357,7 +356,6 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 		$instance['title'] = sanitize_text_field($new_instance['title']);
 		$instance['category'] = (int)$new_instance['category'];
 		$instance['layout'] = esc_attr($new_instance['layout']);
-		$instance['category_link'] = !empty($new_instance['category_link']);
 		
 		$this->delete_widget_cache();
 		
@@ -397,13 +395,6 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 				<option <?php selected( $layout, 'horizontal' ); ?> value="horizontal" ><?php _e('Horizontal Arrangement', 'cardigan'); ?></option>
 				<option <?php selected( $layout, 'vertical' ); ?> value="vertical" ><?php _e('Vertical Arrangement', 'cardigan'); ?></option>
 			</select>
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('category_link'); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $category_link ) ; ?> id="<?php echo $this->get_field_id('category_link'); ?>" name="<?php echo $this->get_field_name('category_link'); ?>" />
-				<?php _e('Link Widget Title to Category Archive page', 'cardigan'); ?>
-			</label>
 		</p>
 		
 <?php

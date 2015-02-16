@@ -10,7 +10,7 @@
 		
 		<?php if (have_posts()) : ?>
 			<h2 id="search-title" class="archive-title">
-				<?php printf( __( 'Search Results for: %s', 'cardigan' ), '<span>' . get_search_query() . '</span>' ); ?>
+				<span><?php printf( __( 'Search Results for: %s', 'cardigan' ), get_search_query() ); ?></span>
 			</h2>
 		
 		<?php while (have_posts()) : the_post();

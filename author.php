@@ -13,7 +13,7 @@
 		<section id="content" class="primary" role="main">
 		
 			<h2 id="author-title" class="archive-title">
-				<?php printf(__('Author Archives: %s', 'cardigan'), '<span>' . esc_attr($author->display_name) . '</span>'); ?>
+				<span><?php printf( __('Author Archives: %s', 'cardigan'), esc_attr($author->display_name) ); ?></span>
 			</h2>
 
 		<?php if (have_posts()) : while (have_posts()) : the_post();

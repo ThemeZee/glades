@@ -30,13 +30,13 @@ function cardigan_theme_options() {
 function cardigan_default_options() {
 
 	$default_options = array(
-		'layout' 							=> 'right-sidebar',
+		'layout' 							=> 'wide',
+		'sidebar' 							=> 'right-sidebar',
 		'header_tagline' 					=> false,
 		'header_icons' 						=> false,
 		'posts_length' 						=> 'excerpt',
 		'post_thumbnails_index'				=> true,
 		'post_thumbnails_single' 			=> true,
-		'excerpt_text' 						=> true,
 		'slider_active_magazine' 			=> false,
 		'slider_active_blog' 				=> false,
 		'slider_animation' 					=> 'horizontal'

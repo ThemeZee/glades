@@ -1,20 +1,34 @@
 
-	<?php do_action('cardigan_before_footer'); ?>
-
-	<div id="footer-wrap">
+	<div id="footernav-wrap">
 	
-		<footer id="footer" class="container clearfix" role="contentinfo">
-			
-			<nav id="footernav" class="clearfix" role="navigation">
+		<nav id="footernav" class="container clearfix" role="navigation">
 				<?php 
 					// Get Navigation out of Theme Options
-					wp_nav_menu(array('theme_location' => 'footer', 'container' => false, 'menu_id' => 'footernav-menu', 'echo' => true, 'fallback_cb' => '', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'depth' => 1));
+					wp_nav_menu( array(
+						'theme_location' => 'footer', 
+						'container' => false, 
+						'menu_id' => 'footernav-menu', 
+						'fallback_cb' => '', 
+						'depth' => 1)
+					);
 				?>
 				<h4 id="footernav-icon"></h4>
 			</nav>
 			
-			<div id="footer-text">
-				<?php do_action('cardigan_footer_text'); ?>
+	</div>
+
+	<div id="footer-wrap">
+		
+		<?php do_action('cardigan_before_footer'); ?>
+		
+		<footer id="footer" role="contentinfo">
+				
+			<div id="footer-line" class="container clearfix" >
+			
+				<span id="footer-text"><?php cardigan_display_footer_text(); ?></span>
+				
+				<div id="credit-link"><?php cardigan_display_credit_link(); ?></div>
+				
 			</div>
 			
 		</footer>

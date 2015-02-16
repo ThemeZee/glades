@@ -17,8 +17,19 @@ function cardigan_sanitize_checkbox( $value ) {
 }
 
 
-// Sanitize the layout sidebar value.
+// Sanitize the site layout value.
 function cardigan_sanitize_layout( $value ) {
+
+	if ( ! in_array( $value, array( 'wide', 'boxed' ), true ) ) :
+        $value = 'wide';
+	endif;
+
+    return $value;
+}
+
+
+// Sanitize the sidebar value.
+function cardigan_sanitize_sidebar( $value ) {
 
 	if ( ! in_array( $value, array( 'left-sidebar', 'right-sidebar' ), true ) ) :
         $value = 'right-sidebar';

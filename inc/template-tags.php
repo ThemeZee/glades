@@ -102,7 +102,7 @@ function cardigan_display_thumbnail_index() {
 	if ( isset($theme_options['post_thumbnails_index']) and $theme_options['post_thumbnails_index'] == true ) : ?>
 
 		<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
-			<?php the_post_thumbnail('post-thumbnail', array('class' => 'alignleft')); ?>
+			<?php the_post_thumbnail('post-thumbnail'); ?>
 		</a>
 
 <?php
@@ -120,7 +120,7 @@ function cardigan_display_thumbnail_single() {
 	// Display Post Thumbnail if activated
 	if ( isset($theme_options['post_thumbnails_single']) and $theme_options['post_thumbnails_single'] == true ) :
 
-		the_post_thumbnail('post-thumbnail', array('class' => 'alignleft'));
+		the_post_thumbnail('post-thumbnail');
 
 	endif;
 
@@ -180,19 +180,35 @@ endif;
 
 
 // Display Footer Text
-add_action( 'cardigan_footer_text', 'cardigan_display_footer_text' );
+if ( ! function_exists( 'cardigan_display_footer_text' ) ):
 
-function cardigan_display_footer_text() { ?>
+	function cardigan_display_footer_text() { 
 
-	<span class="credit-link">
-		<?php printf(__( 'Powered by %1$s and %2$s.', 'cardigan' ), 
-			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'cardigan' ) ),
-			sprintf( '<a href="http://themezee.com/themes/cardigan/" title="Cardigan WordPress Theme">%s</a>', __( 'Cardigan', 'cardigan' ) )
-		); ?>
-	</span>
+		// Get Theme Options from Database
+		$theme_options = cardigan_theme_options();
 
-<?php
-}
+		if ( isset( $theme_options['footer_text'] ) and $theme_options['footer_text'] <> '' ) :
+			
+			echo do_shortcode(wp_kses_post($theme_options['footer_text']));
+				
+		endif; 
+	}
+	
+endif;
+
+
+// Display Credit Link
+if ( ! function_exists( 'cardigan_display_credit_link' ) ):
+
+	function cardigan_display_credit_link() { 
+		
+		printf(__( 'Powered by %1$s and %2$s.', 'cardigan-lite' ), 
+			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'cardigan-lite' ) ),
+			sprintf( '<a href="http://themezee.com/themes/cardigan/" title="Cardigan WordPress Theme">%s</a>', __( 'Cardigan', 'cardigan-lite' ) )
+		); 
+	}
+	
+endif;
 
 
 // Display Social Icons
