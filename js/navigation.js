@@ -4,13 +4,6 @@
 */
 jQuery(document).ready(function($) {
 						
-	/** Mobile Footer Navigation */
-	/* Add toggle effect */
-	$('#footernav-icon').on('click', function(){
-		$('#footernav-menu').slideToggle();
-		$(this).toggleClass('active');
-	});
-	
 	/** Tablet Top Navigation */
 	/* Add toggle effect */
 	$('#topnav-icon-tablet').on('click', function(){
@@ -42,18 +35,24 @@ jQuery(document).ready(function($) {
 		$(this).toggleClass('active');
 	});
 	
-	
+	/* Mobile Submenu Dropdown Icon */
+	$('#topnav ul li.menu-item-has-children').not( $('#topnav ul li.menu-item-has-children ul li') ).prepend('<span class=\"topnav-submenu-dropdown-icon\"></span>');
+			
 	/** Mobile Main Navigation */
 	/* Add toggle effect */
 	$('#mainnav-icon').on('click', function(){
 		$('#mainnav-menu').slideToggle();
 		$(this).toggleClass('active');
 	});
+	
+	/* Mobile Submenu Dropdown Icon */
+	$('#mainnav ul li.menu-item-has-children').not( $('#mainnav ul li.menu-item-has-children ul li') ).prepend('<span class=\"mainnav-submenu-dropdown-icon\"></span>');
+			
 
 	/** Widescreen Dropdown Navigation */
 	/* Get Screen Size with Listener */ 
 	if(typeof matchMedia == 'function') {
-		var mq = window.matchMedia('(max-width: 60em)');
+		var mq = window.matchMedia('(max-width: 55em)');
 		mq.addListener(cardiganWidthChange);
 		cardiganWidthChange(mq);
 	}
@@ -69,7 +68,21 @@ jQuery(document).ready(function($) {
 			$('#mainnav-menu ul').css({display: 'block'}); // Opera Fix
 			$('#mainnav-menu li ul').css({visibility: 'visible', display: 'block'});
 			$('#mainnav-menu li').unbind('mouseenter mouseleave');
-		
+			
+			/* Mobile Submenu Dropdown for top navigation */
+			$('#topnav ul .menu-item-has-children ul').css({display: 'none'});
+			$('.topnav-submenu-dropdown-icon').on('click', function(){
+				$(this).parent().find('ul').slideToggle();
+				$(this).toggleClass('active');
+			});
+			
+			/* Mobile Submenu Dropdown for main navigation */
+			$('#mainnav ul .menu-item-has-children ul').css({display: 'none'});
+			$('.mainnav-submenu-dropdown-icon').on('click', function(){
+				$(this).parent().find('ul').slideToggle();
+				$(this).toggleClass('active');
+			});
+				
 		} else {
 			
 			/* Add dropdown animations for top navigation */

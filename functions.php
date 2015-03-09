@@ -8,9 +8,6 @@ add_action('wp_enqueue_scripts', 'cardigan_enqueue_scripts');
 if ( ! function_exists( 'cardigan_enqueue_scripts' ) ):
 function cardigan_enqueue_scripts() {
 
-	// Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
-	
 	// Register and Enqueue Stylesheet
 	wp_enqueue_style('cardigan-stylesheet', get_stylesheet_uri());
 	

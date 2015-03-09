@@ -189,16 +189,18 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 				else: ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('small-post clearfix'); ?>>
-
-						<?php if ( '' != get_the_post_thumbnail() ) : ?>
+					
+						<div class="small-post-image">
+							
 							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-small'); ?></a>
-						<?php endif; ?>
-						
+					
+						</div>
+
 						<div class="small-post-content">
 							
-							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>						
+							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
-							
+						
 						</div>
 
 					</article>

@@ -59,6 +59,23 @@ function cardigan_customize_register_general_settings( $wp_customize ) {
 		)
 	);
 	
+	// Add Footer Settings
+	$wp_customize->add_setting( 'cardigan_theme_options[footer_text]', array(
+        'default'           => '',
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'cardigan_sanitize_footer_text'
+		)
+	);
+    $wp_customize->add_control( 'cardigan_control_footer_text', array(
+        'label'    => __( 'Footer Text', 'cardigan' ),
+        'section'  => 'cardigan_section_general',
+        'settings' => 'cardigan_theme_options[footer_text]',
+        'type'     => 'textarea',
+		'priority' => 3
+		)
+	);
+	
 }
 
 ?>

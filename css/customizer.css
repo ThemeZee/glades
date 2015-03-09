@@ -3,16 +3,11 @@
  *
  */
 
-#customize-control-cardigan_control_slider_activated {
-	margin-top: 24px;
-}
-#customize-control-cardigan_control_excerpt_text_headline   {
-	margin-top: 12px;
+#customize-control-cardigan_control_header_content,
+#customize-control-cardigan_control_post_images {
+	margin-bottom: 0;
 }
 
-#customize-control-cardigan_control_header_content,
-#customize-control-cardigan_control_post_images,
-#customize-control-cardigan_control_excerpt_text_headline,
-#customize-control-cardigan_control_slider_activated  {
-	margin-bottom: 0;
+#customize-control-cardigan_control_footer_text textarea {
+	height: 4em;
 }

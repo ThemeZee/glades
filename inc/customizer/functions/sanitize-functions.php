@@ -50,14 +50,14 @@ function cardigan_sanitize_post_length( $value ) {
 }
 
 
-// Sanitize the slider animation value.
-function cardigan_sanitize_slider_animation( $value ) {
+// Sanitize footer content textarea
+function cardigan_sanitize_footer_text( $value ) {
 
-	if ( ! in_array( $value, array( 'horizontal', 'fade' ), true ) ) :
-        $value = 'horizontal';
+	if ( current_user_can('unfiltered_html') ) :
+		return $value;
+	else :
+		return stripslashes( wp_filter_post_kses( addslashes($value) ) );
 	endif;
-
-    return $value;
 }
 
 ?>

@@ -198,17 +198,15 @@ endif;
 
 
 // Display Credit Link
-if ( ! function_exists( 'cardigan_display_credit_link' ) ):
+add_action( 'cardigan_credit_link', 'cardigan_display_credit_link' );
 
-	function cardigan_display_credit_link() { 
+function cardigan_display_credit_link() { 
 		
-		printf(__( 'Powered by %1$s and %2$s.', 'cardigan-lite' ), 
-			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'cardigan-lite' ) ),
-			sprintf( '<a href="http://themezee.com/themes/cardigan/" title="Cardigan WordPress Theme">%s</a>', __( 'Cardigan', 'cardigan-lite' ) )
-		); 
-	}
-	
-endif;
+	printf(__( 'Powered by %1$s and %2$s.', 'cardigan' ), 
+		sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'cardigan' ) ),
+		sprintf( '<a href="http://themezee.com/themes/cardigan/" title="Cardigan WordPress Theme">%s</a>', __( 'Cardigan', 'cardigan' ) )
+	); 
+}
 
 
 // Display Social Icons

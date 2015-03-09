@@ -176,9 +176,11 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('medium-post clearfix'); ?>>
 
-					<?php if ( '' != get_the_post_thumbnail() ) : ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-medium'); ?></a>
-					<?php endif; ?>
+						<div class="medium-post-image">
+
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-medium'); ?></a>
+							
+						</div>
 
 						<div class="medium-post-content">
 							
@@ -261,9 +263,11 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('small-post clearfix'); ?>>
 
-					<?php if ( '' != get_the_post_thumbnail() ) : ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-small'); ?></a>
-					<?php endif; ?>
+						<div class="small-post-image">
+
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-small'); ?></a>
+					
+						</div>
 
 						<div class="small-post-content">
 							

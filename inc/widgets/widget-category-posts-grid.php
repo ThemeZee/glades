@@ -217,11 +217,17 @@ class Cardigan_Category_Posts_Grid_Widget extends WP_Widget {
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class('medium-post clearfix'); ?>>
 
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-medium'); ?></a>
+							<div class="medium-post-image">
+								
+								<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-medium'); ?></a>
+								
+							</div>
 
 							<div class="medium-post-content">
+								
 								<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 								<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
+							
 							</div>
 
 						</article>

@@ -4,9 +4,9 @@
 	
 	<?php // Get Theme Options from Database
 		$theme_options = cardigan_theme_options();
-		
+				
 		// Display Featured Posts on homepage
-		if ( isset($theme_options['slider_active_blog']) and $theme_options['slider_active_blog'] == true ) :
+		if ( is_front_page() && cardigan_has_featured_content() ) :
 			
 			// Include the featured content template.
 			get_template_part( 'featured-content' );
