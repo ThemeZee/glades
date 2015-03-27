@@ -1,16 +1,16 @@
 <?php
 
 // Add Category Posts Boxed Widget
-class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
+class Glades_Category_Posts_Boxed_Widget extends WP_Widget {
 
 	function __construct() {
 		
 		// Setup Widget
 		$widget_ops = array(
-			'classname' => 'cardigan_category_posts_boxed', 
-			'description' => __('Display latest posts from category in boxed layout. Please use this widget ONLY on Frontpage Magazine widget area.', 'cardigan')
+			'classname' => 'glades_category_posts_boxed', 
+			'description' => __('Display latest posts from category in boxed layout. Please use this widget ONLY on Frontpage Magazine widget area.', 'glades')
 		);
-		$this->WP_Widget('cardigan_category_posts_boxed', __('Category Posts Boxed (Cardigan)', 'cardigan'), $widget_ops);
+		$this->WP_Widget('glades_category_posts_boxed', __('Category Posts Boxed (Glades)', 'glades'), $widget_ops);
 		
 		// Delete Widget Cache on certain actions
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
@@ -21,7 +21,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 	public function delete_widget_cache() {
 		
-		wp_cache_delete('widget_cardigan_category_posts_boxed', 'widget');
+		wp_cache_delete('widget_glades_category_posts_boxed', 'widget');
 		
 	}
 	
@@ -44,7 +44,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 				
 		// Get Widget Object Cache
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_cardigan_category_posts_boxed', 'widget' );
+			$cache = wp_cache_get( 'widget_glades_category_posts_boxed', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -87,7 +87,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 		// Set Cache
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_cardigan_category_posts_boxed', $cache, 'widget' );
+			wp_cache_set( 'widget_glades_category_posts_boxed', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
@@ -142,7 +142,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 		if( $posts_query->have_posts() ) :
 		
 			// Limit the number of words for the excerpt
-			add_filter('excerpt_length', 'cardigan_category_posts_medium_excerpt');
+			add_filter('excerpt_length', 'glades_category_posts_medium_excerpt');
 			
 			// Display Posts
 			while( $posts_query->have_posts() ) :
@@ -153,7 +153,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('large-post clearfix'); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-extra-large'); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('glades-category-posts-widget-extra-large'); ?></a>
 						
 						<div class="post-content">
 
@@ -163,7 +163,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 							<div class="entry">
 								<?php the_excerpt(); ?>
-								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'cardigan'); ?></a>
+								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'glades'); ?></a>
 							</div>
 							
 						</div>
@@ -178,7 +178,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 						<div class="medium-post-image">
 
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-medium'); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('glades-category-posts-widget-medium'); ?></a>
 							
 						</div>
 
@@ -200,7 +200,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 				
 			<?php
 			// Remove excerpt filter
-			remove_filter('excerpt_length', 'cardigan_category_posts_medium_excerpt');
+			remove_filter('excerpt_length', 'glades_category_posts_medium_excerpt');
 			
 		endif;
 		
@@ -229,7 +229,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 		if( $posts_query->have_posts() ) :
 		
 			// Limit the number of words for the excerpt
-			add_filter('excerpt_length', 'cardigan_category_posts_medium_excerpt');
+			add_filter('excerpt_length', 'glades_category_posts_medium_excerpt');
 			
 			// Display Posts
 			while( $posts_query->have_posts() ) :
@@ -240,7 +240,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('large-post clearfix'); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-large'); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('glades-category-posts-widget-large'); ?></a>
 						
 						<div class="post-content">
 
@@ -250,7 +250,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 							<div class="entry">
 								<?php the_excerpt(); ?>
-								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'cardigan'); ?></a>
+								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'glades'); ?></a>
 							</div>
 							
 						</div>
@@ -265,7 +265,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 						<div class="small-post-image">
 
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-small'); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('glades-category-posts-widget-small'); ?></a>
 					
 						</div>
 
@@ -287,7 +287,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 				
 			<?php
 			// Remove excerpt filter
-			remove_filter('excerpt_length', 'cardigan_category_posts_medium_excerpt');
+			remove_filter('excerpt_length', 'glades_category_posts_medium_excerpt');
 			
 		endif;
 		
@@ -311,7 +311,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 	<?php if ( comments_open() ) : ?>
 		<span class="meta-comments sep">
-			<?php comments_popup_link( __('Leave a comment', 'cardigan'),__('One comment','cardigan'),__('% comments','cardigan') ); ?>
+			<?php comments_popup_link( __('Leave a comment', 'glades'),__('One comment','glades'),__('% comments','glades') ); ?>
 		</span>
 	<?php endif;
 
@@ -341,7 +341,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 			else:
 			
-				$link_title = sprintf( __('View all posts from category %s', 'cardigan'), get_cat_name( $category ) );
+				$link_title = sprintf( __('View all posts from category %s', 'glades'), get_cat_name( $category ) );
 				$link_url = esc_url( get_category_link( $category ) );
 				
 				echo '<a href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a>';
@@ -374,16 +374,16 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 
 ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'cardigan'); ?>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'glades'); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 			</label>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Category:', 'cardigan'); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Category:', 'glades'); ?></label><br/>
 			<?php // Display Category Select
 				$args = array(
-					'show_option_all'    => __('All Categories', 'cardigan'),
+					'show_option_all'    => __('All Categories', 'glades'),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $category,
@@ -395,15 +395,15 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php _e('Post Layout:', 'cardigan'); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php _e('Post Layout:', 'glades'); ?></label><br/>
 			<select id="<?php echo $this->get_field_id('layout'); ?>" name="<?php echo $this->get_field_name('layout'); ?>">
-				<option <?php selected( $layout, 'horizontal' ); ?> value="horizontal" ><?php _e('Horizontal Arrangement', 'cardigan'); ?></option>
-				<option <?php selected( $layout, 'vertical' ); ?> value="vertical" ><?php _e('Vertical Arrangement', 'cardigan'); ?></option>
+				<option <?php selected( $layout, 'horizontal' ); ?> value="horizontal" ><?php _e('Horizontal Arrangement', 'glades'); ?></option>
+				<option <?php selected( $layout, 'vertical' ); ?> value="vertical" ><?php _e('Vertical Arrangement', 'glades'); ?></option>
 			</select>
 		</p>
 		
 <?php
 	}
 }
-register_widget('Cardigan_Category_Posts_Boxed_Widget');
+register_widget('Glades_Category_Posts_Boxed_Widget');
 ?>

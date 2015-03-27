@@ -8,14 +8,14 @@
  
  
 	// Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
+	$theme_options = glades_theme_options();
 
 	
 	// Display Social Icons
 	if ( isset($theme_options['header_icons']) and $theme_options['header_icons'] == true ) : ?>
 
 		<div id="header-social-icons" class="social-icons-wrap clearfix">
-			<?php cardigan_display_social_icons(); ?>
+			<?php glades_display_social_icons(); ?>
 		</div>
 
 <?php

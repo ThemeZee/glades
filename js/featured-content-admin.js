@@ -1,5 +1,5 @@
 /**
- * Cardigan Featured Content admin behavior: add a tag suggestion
+ * Glades Featured Content admin behavior: add a tag suggestion
  * when changing the tag.
  *
  *

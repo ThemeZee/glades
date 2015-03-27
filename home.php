@@ -3,10 +3,10 @@
 	<div id="wrap" class="container clearfix">
 	
 	<?php // Get Theme Options from Database
-		$theme_options = cardigan_theme_options();
+		$theme_options = glades_theme_options();
 				
 		// Display Featured Posts on homepage
-		if ( is_front_page() && cardigan_has_featured_content() ) :
+		if ( is_front_page() && glades_has_featured_content() ) :
 			
 			// Include the featured content template.
 			get_template_part( 'featured-content' );
@@ -22,7 +22,7 @@
 		
 			endwhile;
 			
-		cardigan_display_pagination();
+		glades_display_pagination();
 
 		endif; ?>
 			

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php // Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
+	$theme_options = glades_theme_options();
 ?>
 
 	<div id="wrap" class="container clearfix">
@@ -10,7 +10,7 @@
 		
 		<?php if (have_posts()) : ?>
 			<h2 id="search-title" class="archive-title">
-				<span><?php printf( __( 'Search Results for: %s', 'cardigan' ), get_search_query() ); ?></span>
+				<span><?php printf( __( 'Search Results for: %s', 'glades' ), get_search_query() ); ?></span>
 			</h2>
 		
 		<?php while (have_posts()) : the_post();
@@ -19,18 +19,18 @@
 		
 			endwhile;
 			
-			cardigan_display_pagination();
+			glades_display_pagination();
 
 		else : ?>
 
 			<h2 id="search-title" class="archive-title">
-				<?php printf( __( 'Search Results for: %s', 'cardigan' ), '<span>' . get_search_query() . '</span>' ); ?>
+				<?php printf( __( 'Search Results for: %s', 'glades' ), '<span>' . get_search_query() . '</span>' ); ?>
 			</h2>
 			
 			<div class="post">
 				
 				<div class="entry">
-					<p><?php _e('No matches. Please try again, or use the navigation menus to find what you search for.', 'cardigan'); ?></p>
+					<p><?php _e('No matches. Please try again, or use the navigation menus to find what you search for.', 'glades'); ?></p>
 				</div>
 				
 			</div>

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php // Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
+	$theme_options = glades_theme_options();
 ?>
 
 	<div id="wrap" class="container clearfix">
@@ -9,7 +9,7 @@
 		<section id="content" class="primary" role="main">
 
 		<h2 id="tag-title" class="archive-title">
-			<span><?php printf( __('Tag Archives: %s', 'cardigan'), single_cat_title( '', false ) ); ?></span>
+			<span><?php printf( __('Tag Archives: %s', 'glades'), single_cat_title( '', false ) ); ?></span>
 		</h2>
 
 		<?php if (have_posts()) : while (have_posts()) : the_post();
@@ -18,7 +18,7 @@
 		
 			endwhile;
 			
-		cardigan_display_pagination();
+		glades_display_pagination();
 
 		endif; ?>
 			

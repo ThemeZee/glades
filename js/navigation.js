@@ -53,10 +53,10 @@ jQuery(document).ready(function($) {
 	/* Get Screen Size with Listener */ 
 	if(typeof matchMedia == 'function') {
 		var mq = window.matchMedia('(max-width: 55em)');
-		mq.addListener(cardiganWidthChange);
-		cardiganWidthChange(mq);
+		mq.addListener(gladesWidthChange);
+		gladesWidthChange(mq);
 	}
-	function cardiganWidthChange(mq) {
+	function gladesWidthChange(mq) {
 		if (mq.matches) {
 	
 			/* Reset dropdown animations for top navigation */

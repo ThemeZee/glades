@@ -3,9 +3,9 @@
 
 		<h2 class="post-title"><?php the_title(); ?></h2>
 		
-		<div class="postmeta"><?php cardigan_display_postmeta(); ?></div>
+		<div class="postmeta"><?php glades_display_postmeta(); ?></div>
 		
-		<?php cardigan_display_thumbnail_single(); ?>
+		<?php glades_display_thumbnail_single(); ?>
 		
 		<div class="entry clearfix">
 			<?php the_content(); ?>
@@ -13,6 +13,6 @@
 			<div class="page-links"><?php wp_link_pages(); ?></div>			
 		</div>
 		
-		<div class="postinfo clearfix"><?php cardigan_display_postinfo(); ?></div>
+		<div class="postinfo clearfix"><?php glades_display_postinfo(); ?></div>
 
 	</article>

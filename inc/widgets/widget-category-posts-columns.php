@@ -1,16 +1,16 @@
 <?php
 
 // Add Category Posts Columns Widget
-class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
+class Glades_Category_Posts_Columns_Widget extends WP_Widget {
 
 	function __construct() {
 		
 		// Setup Widget
 		$widget_ops = array(
-			'classname' => 'cardigan_category_posts_columns', 
-			'description' => __('Display latest posts from two specified categories. Please use this widget ONLY on Frontpage Magazine widget area.', 'cardigan')
+			'classname' => 'glades_category_posts_columns', 
+			'description' => __('Display latest posts from two specified categories. Please use this widget ONLY on Frontpage Magazine widget area.', 'glades')
 		);
-		$this->WP_Widget('cardigan_category_posts_columns', __('Category Posts Columns (Cardigan)', 'cardigan'), $widget_ops);
+		$this->WP_Widget('glades_category_posts_columns', __('Category Posts Columns (Glades)', 'glades'), $widget_ops);
 		
 		// Delete Widget Cache on certain actions
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
@@ -21,7 +21,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 
 	public function delete_widget_cache() {
 		
-		wp_cache_delete('widget_cardigan_category_posts_columns', 'widget');
+		wp_cache_delete('widget_glades_category_posts_columns', 'widget');
 		
 	}
 	
@@ -47,7 +47,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 				
 		// Get Widget Object Cache
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_cardigan_category_posts_columns', 'widget' );
+			$cache = wp_cache_get( 'widget_glades_category_posts_columns', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -87,7 +87,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 		// Set Cache
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_cardigan_category_posts_columns', $cache, 'widget' );
+			wp_cache_set( 'widget_glades_category_posts_columns', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
@@ -151,7 +151,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 		$i = 0;
 		
 		// Limit the number of words for the excerpt
-		add_filter('excerpt_length', 'cardigan_category_posts_small_excerpt');
+		add_filter('excerpt_length', 'glades_category_posts_small_excerpt');
 
 		// Check if there are posts
 		if( $posts_query->have_posts() ) :
@@ -164,12 +164,12 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 				if( $highlight_post == true and (isset($i) and $i == 0) ) : 
 				
 					// Limit the number of words for the excerpt
-					add_filter('excerpt_length', 'cardigan_category_posts_medium_excerpt');
+					add_filter('excerpt_length', 'glades_category_posts_medium_excerpt');
 				?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('large-post clearfix'); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-large'); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('glades-category-posts-widget-large'); ?></a>
 
 						<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
@@ -177,14 +177,14 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 
 						<div class="entry">
 							<?php the_excerpt(); ?>
-							<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'cardigan'); ?></a>
+							<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'glades'); ?></a>
 						</div>
 
 					</article>
 
 				<?php 	
 					// Remove excerpt filter
-					remove_filter('excerpt_length', 'cardigan_category_posts_medium_excerpt');
+					remove_filter('excerpt_length', 'glades_category_posts_medium_excerpt');
 					
 				else: ?>
 
@@ -192,7 +192,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 					
 						<div class="small-post-image">
 							
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('cardigan-category-posts-widget-small'); ?></a>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('glades-category-posts-widget-small'); ?></a>
 					
 						</div>
 
@@ -215,7 +215,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 		endif;
 		
 		// Remove excerpt filter
-		remove_filter('excerpt_length', 'cardigan_category_posts_small_excerpt');
+		remove_filter('excerpt_length', 'glades_category_posts_small_excerpt');
 		
 		// Reset Postdata
 		wp_reset_postdata();
@@ -237,7 +237,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 
 	<?php if ( comments_open() ) : ?>
 		<span class="meta-comments sep">
-			<?php comments_popup_link( __('Leave a comment', 'cardigan'),__('One comment','cardigan'),__('% comments','cardigan') ); ?>
+			<?php comments_popup_link( __('Leave a comment', 'glades'),__('One comment','glades'),__('% comments','glades') ); ?>
 		</span>
 	<?php endif;
 
@@ -267,7 +267,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 
 			else:
 			
-				$link_title = sprintf( __('View all posts from category %s', 'cardigan'), get_cat_name( $category_id ) );
+				$link_title = sprintf( __('View all posts from category %s', 'glades'), get_cat_name( $category_id ) );
 				$link_url = esc_url( get_category_link( $category_id ) );
 				
 				echo '<a href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a>';
@@ -303,16 +303,16 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 
 ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('category_one_title'); ?>"><?php _e('Left Category Title:', 'cardigan'); ?>
+			<label for="<?php echo $this->get_field_id('category_one_title'); ?>"><?php _e('Left Category Title:', 'glades'); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id('category_one_title'); ?>" name="<?php echo $this->get_field_name('category_one_title'); ?>" type="text" value="<?php echo $category_one_title; ?>" />
 			</label>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('category_one'); ?>"><?php _e('Left Category:', 'cardigan'); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('category_one'); ?>"><?php _e('Left Category:', 'glades'); ?></label><br/>
 			<?php // Display Category One Select
 				$args = array(
-					'show_option_all'    => __('All Categories', 'cardigan'),
+					'show_option_all'    => __('All Categories', 'glades'),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $category_one,
@@ -324,16 +324,16 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 		</p>
 		
 				<p>
-			<label for="<?php echo $this->get_field_id('category_two_title'); ?>"><?php _e('Right Category Title:', 'cardigan'); ?>
+			<label for="<?php echo $this->get_field_id('category_two_title'); ?>"><?php _e('Right Category Title:', 'glades'); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id('category_two_title'); ?>" name="<?php echo $this->get_field_name('category_two_title'); ?>" type="text" value="<?php echo $category_two_title; ?>" />
 			</label>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('category_two'); ?>"><?php _e('Right Category:', 'cardigan'); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('category_two'); ?>"><?php _e('Right Category:', 'glades'); ?></label><br/>
 			<?php // Display Category One Select
 				$args = array(
-					'show_option_all'    => __('All Categories', 'cardigan'),
+					'show_option_all'    => __('All Categories', 'glades'),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $category_two,
@@ -345,7 +345,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'cardigan'); ?>
+			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'glades'); ?>
 				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo (int)$number; ?>" size="3" />
 			</label>
 		</p>
@@ -353,12 +353,12 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('highlight_post'); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $highlight_post ) ; ?> id="<?php echo $this->get_field_id('highlight_post'); ?>" name="<?php echo $this->get_field_name('highlight_post'); ?>" />
-				<?php _e('Highlight First Post (Big Image + Excerpt)', 'cardigan'); ?>
+				<?php _e('Highlight First Post (Big Image + Excerpt)', 'glades'); ?>
 			</label>
 		</p>
 		
 <?php
 	}
 }
-register_widget('Cardigan_Category_Posts_Columns_Widget');
+register_widget('Glades_Category_Posts_Columns_Widget');
 ?>

@@ -5,10 +5,10 @@
  */
 
 // Get our Featured Content posts
-$featured_posts = cardigan_get_featured_content();
+$featured_posts = glades_get_featured_content();
 
 // Limit the number of words in slideshow post excerpts
-add_filter('excerpt_length', 'cardigan_featured_content_excerpt_length');
+add_filter('excerpt_length', 'glades_featured_content_excerpt_length');
 
 // Set loop count
 $loop_count = 1;
@@ -30,14 +30,14 @@ $loop_count = 1;
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						
 						<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
-							<?php the_post_thumbnail('cardigan-featured-content-left'); ?>
+							<?php the_post_thumbnail('glades-featured-content-left'); ?>
 						</a>
 						
 						<div class="post-content">
 
 							<h2 class="post-title"><a href="<?php esc_url(the_permalink()) ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 							
-							<div class="postmeta clearfix"><?php cardigan_display_postmeta(); ?></div>
+							<div class="postmeta clearfix"><?php glades_display_postmeta(); ?></div>
 					
 						</div>
 
@@ -57,7 +57,7 @@ $loop_count = 1;
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						
 						<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
-							<?php the_post_thumbnail('cardigan-featured-content-right'); ?>
+							<?php the_post_thumbnail('glades-featured-content-right'); ?>
 						</a>
 						
 						<div class="post-content">
@@ -85,7 +85,7 @@ $loop_count = 1;
 <?php
 
 // Remove excerpt filter
-remove_filter('excerpt_length', 'cardigan_featured_content_excerpt_length');
+remove_filter('excerpt_length', 'glades_featured_content_excerpt_length');
 
 // Reset Postdata
 wp_reset_postdata();

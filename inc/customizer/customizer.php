@@ -15,16 +15,16 @@ require( get_template_directory() . '/inc/customizer/sections/customizer-post.ph
 require( get_template_directory() . '/inc/customizer/sections/customizer-upgrade.php' );
 
 // Add Theme Options section to Customizer
-add_action( 'customize_register', 'cardigan_customize_register_options' );
+add_action( 'customize_register', 'glades_customize_register_options' );
 
-function cardigan_customize_register_options( $wp_customize ) {
+function glades_customize_register_options( $wp_customize ) {
 
 	// Add Theme Options Panel
-	$wp_customize->add_panel( 'cardigan_options_panel', array(
+	$wp_customize->add_panel( 'glades_options_panel', array(
 		'priority'       => 180,
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
-		'title'          => __( 'Theme Options', 'cardigan' ),
+		'title'          => __( 'Theme Options', 'glades' ),
 		'description'    => '',
 	) );
 	
@@ -37,21 +37,21 @@ function cardigan_customize_register_options( $wp_customize ) {
 	$wp_customize->get_section( 'background_image'  )->title     = 'Background';
 	
 	// Change Featured Content Section
-	$wp_customize->get_section( 'featured_content'  )->panel = 'cardigan_options_panel';
+	$wp_customize->get_section( 'featured_content'  )->panel = 'glades_options_panel';
 	$wp_customize->get_section( 'featured_content'  )->priority = 40;
 	
 	// Add Header Tagline option
-	$wp_customize->add_setting( 'cardigan_theme_options[header_tagline]', array(
+	$wp_customize->add_setting( 'glades_theme_options[header_tagline]', array(
         'default'           => false,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'cardigan_sanitize_checkbox'
+        'sanitize_callback' => 'glades_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'cardigan_control_header_tagline', array(
-        'label'    => __( 'Display Tagline below site title.', 'cardigan' ),
+    $wp_customize->add_control( 'glades_control_header_tagline', array(
+        'label'    => __( 'Display Tagline below site title.', 'glades' ),
         'section'  => 'title_tagline',
-        'settings' => 'cardigan_theme_options[header_tagline]',
+        'settings' => 'glades_theme_options[header_tagline]',
         'type'     => 'checkbox',
 		'priority' => 99
 		)
@@ -61,18 +61,18 @@ function cardigan_customize_register_options( $wp_customize ) {
 
 
 // Embed JS file to make Theme Customizer preview reload changes asynchronously.
-add_action( 'customize_preview_init', 'cardigan_customize_preview_js' );
+add_action( 'customize_preview_init', 'glades_customize_preview_js' );
 
-function cardigan_customize_preview_js() {
-	wp_enqueue_script( 'cardigan-customizer-js', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20140312', true );
+function glades_customize_preview_js() {
+	wp_enqueue_script( 'glades-customizer-js', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20140312', true );
 }
 
 
 // Embed CSS styles for Theme Customizer
-add_action( 'customize_controls_print_styles', 'cardigan_customize_preview_css' );
+add_action( 'customize_controls_print_styles', 'glades_customize_preview_css' );
 
-function cardigan_customize_preview_css() {
-	wp_enqueue_style( 'cardigan-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20140312' );
+function glades_customize_preview_css() {
+	wp_enqueue_style( 'glades-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20140312' );
 
 }
 

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php // Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
+	$theme_options = glades_theme_options();
 ?>
 
 <?php // Retrieve Current Author
@@ -13,7 +13,7 @@
 		<section id="content" class="primary" role="main">
 		
 			<h2 id="author-title" class="archive-title">
-				<span><?php printf( __('Author Archives: %s', 'cardigan'), esc_attr($author->display_name) ); ?></span>
+				<span><?php printf( __('Author Archives: %s', 'glades'), esc_attr($author->display_name) ); ?></span>
 			</h2>
 
 		<?php if (have_posts()) : while (have_posts()) : the_post();
@@ -22,7 +22,7 @@
 		
 			endwhile;
 			
-		cardigan_display_pagination();
+		glades_display_pagination();
 			
 		endif; ?>
 			

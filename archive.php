@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php // Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
+	$theme_options = glades_theme_options();
 ?>
 
 	<div id="wrap" class="container clearfix">
@@ -12,9 +12,9 @@
 				<span>
 				<?php // Display Archive Title
 				if ( is_date() ) :
-					printf( __( 'Monthly Archives: %s', 'cardigan'), get_the_date( _x( 'F Y', 'date format of monthly archives', 'cardigan') ) );
+					printf( __( 'Monthly Archives: %s', 'glades'), get_the_date( _x( 'F Y', 'date format of monthly archives', 'glades') ) );
 				else :
-					_e( 'Archives', 'cardigan');
+					_e( 'Archives', 'glades');
 				endif;
 				?>
 				</span>
@@ -26,7 +26,7 @@
 		
 			endwhile;
 			
-		cardigan_display_pagination();
+		glades_display_pagination();
 
 		endif; ?>
 			

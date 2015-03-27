@@ -17,7 +17,7 @@
 <body <?php body_class(); ?>>
 
 <?php // Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
+	$theme_options = glades_theme_options();
 ?>
 	
 	<div id="wrapper" class="hfeed">
@@ -32,7 +32,7 @@
 
 				<div id="logo" class="clearfix">
 				
-				<?php do_action('cardigan_site_title'); ?>
+				<?php do_action('glades_site_title'); ?>
 
 				<?php // Display Tagline on header if activated
 				if ( isset($theme_options['header_tagline']) and $theme_options['header_tagline'] == true ) : ?>			
@@ -45,7 +45,7 @@
 					<h4 id="mainnav-icon"></h4>
 					<?php 
 						// Get Navigation out of Theme Options
-						wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_id' => 'mainnav-menu', 'echo' => true, 'fallback_cb' => 'cardigan_default_menu', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'depth' => 0));
+						wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_id' => 'mainnav-menu', 'echo' => true, 'fallback_cb' => 'glades_default_menu', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'depth' => 0));
 					?>
 				</nav>
 
@@ -54,4 +54,4 @@
 		</div>
 		
 		<?php // Display Custom Header Image
-			cardigan_display_custom_header(); ?>
+			glades_display_custom_header(); ?>

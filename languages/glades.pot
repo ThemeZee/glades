@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Cardigan\n"
+"Project-Id-Version: Glades\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-19 11:36+0100\n"
-"PO-Revision-Date: 2015-01-19 11:36+0100\n"
+"POT-Creation-Date: 2015-03-27 16:10+0100\n"
+"PO-Revision-Date: 2015-03-27 16:10+0100\n"
 "Last-Translator: Ulrich Pogson <grapplerulrich@gmail.com>\n"
 "Language-Team: ThemeZee <contact@themezee.com>\n"
 "MIME-Version: 1.0\n"
@@ -36,16 +36,16 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
-#: archive.php:14
+#: archive.php:15
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: archive.php:14
+#: archive.php:15
 msgid "F Y"
 msgstr ""
 
-#: archive.php:16
+#: archive.php:17
 msgid "Archives"
 msgstr ""
 
@@ -63,92 +63,82 @@ msgstr ""
 msgid "Enter password to view comments."
 msgstr ""
 
-#: comments.php:20 inc/template-tags.php:79
-#: inc/widgets/widget-category-posts-boxed.php:190
-#: inc/widgets/widget-category-posts-columns.php:228
-#: inc/widgets/widget-category-posts-grid.php:213
+#: comments.php:20 inc/template-tags.php:85
+#: inc/widgets/widget-category-posts-boxed.php:314
+#: inc/widgets/widget-category-posts-columns.php:240
+#: inc/widgets/widget-category-posts-grid.php:273
 msgid "One comment"
 msgstr ""
 
-#: comments.php:20 inc/template-tags.php:79
-#: inc/widgets/widget-category-posts-boxed.php:190
-#: inc/widgets/widget-category-posts-columns.php:228
-#: inc/widgets/widget-category-posts-grid.php:213
+#: comments.php:20 inc/template-tags.php:85
+#: inc/widgets/widget-category-posts-boxed.php:314
+#: inc/widgets/widget-category-posts-columns.php:240
+#: inc/widgets/widget-category-posts-grid.php:273
 #, php-format
 msgid "% comments"
 msgstr ""
 
 #: content-excerpt.php:12 content.php:11
-msgid "Read more"
+#: inc/widgets/widget-category-posts-boxed.php:166
+#: inc/widgets/widget-category-posts-boxed.php:253
+#: inc/widgets/widget-category-posts-columns.php:180
+msgid "Continue reading &raquo;"
 msgstr ""
 
-#: featured-content-slider.php:14
-msgid ""
-"There is no featured content to be displayed in the slider. To set up the "
-"slider, go to Appearance → Customize  → Theme Options, and add a tag under "
-"Tag Name in the Featured Content section. The slideshow will then display "
-"all posts which are tagged with that keyword."
-msgstr ""
-
-#: functions.php:109
+#: functions.php:95
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:96
+msgid "Top Navigation"
+msgstr ""
+
+#: functions.php:97
 msgid "Footer Navigation"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:100
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:153
+#: functions.php:137 inc/customizer/sections/customizer-general.php:50
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:155
+#: functions.php:139
 msgid "Appears on posts and pages except front page and fullwidth template."
 msgstr ""
 
-#: functions.php:162
+#: functions.php:146
 msgid "Magazine Homepage"
 msgstr ""
 
-#: functions.php:164
+#: functions.php:148
 msgid ""
 "Appears on Magazine Homepage template only. You can use the Category Posts "
 "widgets here."
 msgstr ""
 
-#: functions.php:196
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: functions.php:257
+#: functions.php:228
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:258 functions.php:278
+#: functions.php:229 functions.php:249
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:269
+#: functions.php:240
 #, php-format
 msgid "<span class=\"fn\">%s</span>"
 msgstr ""
 
-#: functions.php:273
+#: functions.php:244
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:277
+#: functions.php:248
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
-
-#: header.php:50
-msgid "Menu"
 msgstr ""
 
 #: image.php:19
@@ -197,9 +187,9 @@ msgstr ""
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: template-magazine.php:36
+#: template-magazine.php:39
 msgid ""
-"There are no widgets to be displayed. Please go to Appearance → Widgets and "
+"There are no widgets to be displayed. Please go to Appearance -> Widgets and "
 "add at least one widget to the \"Magazine Homepage\" widget area. You can "
 "use the three Category Posts widgets to set up the theme like the demo "
 "website."
@@ -229,35 +219,43 @@ msgstr ""
 msgid "Don&rsquo;t display tag on front end."
 msgstr ""
 
-#: inc/template-tags.php:71
+#: inc/template-tags.php:60
+#, php-format
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time datetime=\"%3$s\">"
+"%4$s</time></a>"
+msgstr ""
+
+#: inc/template-tags.php:70
+#, php-format
+msgid "<a href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a>"
+msgstr ""
+
+#: inc/template-tags.php:72
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:79 inc/widgets/widget-category-posts-boxed.php:190
-#: inc/widgets/widget-category-posts-columns.php:228
-#: inc/widgets/widget-category-posts-grid.php:213
+#: inc/template-tags.php:85 inc/widgets/widget-category-posts-boxed.php:314
+#: inc/widgets/widget-category-posts-columns.php:240
+#: inc/widgets/widget-category-posts-grid.php:273
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:83
-msgid "Edit Post"
-msgstr ""
-
-#: inc/template-tags.php:186
+#: inc/template-tags.php:205
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
 
-#: inc/template-tags.php:187
+#: inc/template-tags.php:206
 msgid "WordPress"
 msgstr ""
 
-#: inc/template-tags.php:188
-msgid "Cardigan"
+#: inc/template-tags.php:207
+msgid "Glades"
 msgstr ""
 
-#: inc/template-tags.php:220
+#: inc/template-tags.php:236
 msgid ""
 "Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with "
 "custom links to all your social networks. Then click on \"Manage Locations\" "
@@ -265,7 +263,7 @@ msgid ""
 msgstr ""
 
 #: inc/theme-info.php:15
-msgid "Welcome to Cardigan"
+msgid "Welcome to Glades"
 msgstr ""
 
 #: inc/theme-info.php:16
@@ -313,16 +311,16 @@ msgid ""
 msgstr ""
 
 #: inc/theme-info.php:70
-msgid "Visit Cardigan Documentation"
+msgid "Visit Glades Documentation"
 msgstr ""
 
-#: inc/theme-info.php:75 inc/customizer/customizer.php:28
+#: inc/theme-info.php:75 inc/customizer/customizer.php:27
 msgid "Theme Options"
 msgstr ""
 
 #: inc/theme-info.php:77
 msgid ""
-"Cardigan supports the awesome Theme Customizer for all theme settings. Click "
+"Glades supports the awesome Theme Customizer for all theme settings. Click "
 "\"Customize Theme\" to open the Customizer now."
 msgstr ""
 
@@ -341,20 +339,20 @@ msgid ""
 msgstr ""
 
 #: inc/theme-info.php:88 inc/customizer/sections/customizer-upgrade.php:62
-msgid "Learn more about Cardigan Pro"
+msgid "Learn more about Glades Pro"
 msgstr ""
 
 #: inc/theme-info.php:108
 #, php-format
 msgid ""
-"Cardigan is proudly brought to you by %1s. If you like this theme, %2s :) "
+"Glades is proudly brought to you by %1s. If you like this theme, %2s :) "
 msgstr ""
 
 #: inc/theme-info.php:110
 msgid "rate it"
 msgstr ""
 
-#: inc/customizer/customizer.php:53
+#: inc/customizer/customizer.php:52
 msgid "Display Tagline below site title."
 msgstr ""
 
@@ -363,15 +361,27 @@ msgid "General Settings"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:29
-msgid "Theme Layout"
+msgid "Site Layout"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:35
-msgid "Left Sidebar"
+msgid "Wide Layout (default)"
 msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:36
+msgid "Boxed Layout"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:56
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:57
 msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:71
+msgid "Footer Text"
 msgstr ""
 
 #: inc/customizer/sections/customizer-header.php:14
@@ -382,18 +392,8 @@ msgstr ""
 msgid "Header Content"
 msgstr ""
 
-#: inc/customizer/sections/customizer-header.php:46
-msgid ""
-"The Header Content configured below will be displayed on the right hand side "
-"of the header area."
-msgstr ""
-
-#: inc/customizer/sections/customizer-header.php:63
-msgid "Display search field on header area"
-msgstr ""
-
-#: inc/customizer/sections/customizer-header.php:79
-msgid "Display Social Icons on header area"
+#: inc/customizer/sections/customizer-header.php:47
+msgid "Display Social Icons on top navigation."
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:14
@@ -424,50 +424,8 @@ msgstr ""
 msgid "Display featured images on single posts"
 msgstr ""
 
-#: inc/customizer/sections/customizer-post.php:100
-msgid "Excerpt More Text"
-msgstr ""
-
-#: inc/customizer/sections/customizer-post.php:115
-msgid "Display [...] after text excerpts."
-msgstr ""
-
-#: inc/customizer/sections/customizer-slider.php:14
-msgid "Post Slider"
-msgstr ""
-
-#: inc/customizer/sections/customizer-slider.php:15
-msgid ""
-"The slideshow displays your featured posts, which you can configure on the "
-"\"Featured Content\" section above."
-msgstr ""
-
-#: inc/customizer/sections/customizer-slider.php:31
-msgid "Activate Featured Post Slider"
-msgstr ""
-
-#: inc/customizer/sections/customizer-slider.php:46
-msgid "Display Slider on Magazine Front Page template."
-msgstr ""
-
-#: inc/customizer/sections/customizer-slider.php:61
-msgid "Display Slider on normal blog index."
-msgstr ""
-
-#: inc/customizer/sections/customizer-slider.php:77
-msgid "Slider Animation"
-msgstr ""
-
-#: inc/customizer/sections/customizer-slider.php:83
-msgid "Horizontal Slider"
-msgstr ""
-
-#: inc/customizer/sections/customizer-slider.php:84
-msgid "Fade Slider"
-msgstr ""
-
 #: inc/customizer/sections/customizer-upgrade.php:14
-msgid "Cardigan Pro"
+msgid "Glades Pro"
 msgstr ""
 
 #: inc/customizer/sections/customizer-upgrade.php:30
@@ -487,36 +445,43 @@ msgid ""
 msgstr ""
 
 #: inc/widgets/widget-category-posts-boxed.php:13
-msgid "Category Posts Boxed (Cardigan)"
+msgid "Category Posts Boxed (Glades)"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:216
-#: inc/widgets/widget-category-posts-columns.php:254
-#: inc/widgets/widget-category-posts-grid.php:239
+#: inc/widgets/widget-category-posts-boxed.php:344
+#: inc/widgets/widget-category-posts-columns.php:270
+#: inc/widgets/widget-category-posts-grid.php:303
 #, php-format
 msgid "View all posts from category %s"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:254
-#: inc/widgets/widget-category-posts-grid.php:279
+#: inc/widgets/widget-category-posts-boxed.php:377
+#: inc/widgets/widget-category-posts-grid.php:337
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:260
-#: inc/widgets/widget-category-posts-grid.php:285
+#: inc/widgets/widget-category-posts-boxed.php:383
+#: inc/widgets/widget-category-posts-grid.php:343
 msgid "Category:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:263
-#: inc/widgets/widget-category-posts-columns.php:305
-#: inc/widgets/widget-category-posts-columns.php:325
-#: inc/widgets/widget-category-posts-grid.php:288
+#: inc/widgets/widget-category-posts-boxed.php:386
+#: inc/widgets/widget-category-posts-columns.php:315
+#: inc/widgets/widget-category-posts-columns.php:336
+#: inc/widgets/widget-category-posts-grid.php:346
 msgid "All Categories"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:276
-#: inc/widgets/widget-category-posts-grid.php:315
-msgid "Link Widget Title to Category Archive page"
+#: inc/widgets/widget-category-posts-boxed.php:398
+msgid "Post Layout:"
+msgstr ""
+
+#: inc/widgets/widget-category-posts-boxed.php:400
+msgid "Horizontal Arrangement"
+msgstr ""
+
+#: inc/widgets/widget-category-posts-boxed.php:401
+msgid "Vertical Arrangement"
 msgstr ""
 
 #: inc/widgets/widget-category-posts-columns.php:11
@@ -526,36 +491,32 @@ msgid ""
 msgstr ""
 
 #: inc/widgets/widget-category-posts-columns.php:13
-msgid "Category Posts Columns (Cardigan)"
+msgid "Category Posts Columns (Glades)"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:296
+#: inc/widgets/widget-category-posts-columns.php:306
 msgid "Left Category Title:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:302
+#: inc/widgets/widget-category-posts-columns.php:312
 msgid "Left Category:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:316
+#: inc/widgets/widget-category-posts-columns.php:327
 msgid "Right Category Title:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:322
+#: inc/widgets/widget-category-posts-columns.php:333
 msgid "Right Category:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:336
-#: inc/widgets/widget-category-posts-grid.php:299
+#: inc/widgets/widget-category-posts-columns.php:348
+#: inc/widgets/widget-category-posts-grid.php:366
 msgid "Number of posts:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:344
+#: inc/widgets/widget-category-posts-columns.php:356
 msgid "Highlight First Post (Big Image + Excerpt)"
-msgstr ""
-
-#: inc/widgets/widget-category-posts-columns.php:351
-msgid "Link Category Titles to Category Archive pages"
 msgstr ""
 
 #: inc/widgets/widget-category-posts-grid.php:11
@@ -565,13 +526,17 @@ msgid ""
 msgstr ""
 
 #: inc/widgets/widget-category-posts-grid.php:13
-msgid "Category Posts Grid (Cardigan)"
+msgid "Category Posts Grid (Glades)"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-grid.php:301
-msgid "Please chose an even number (2, 4, 6, 8)."
+#: inc/widgets/widget-category-posts-grid.php:358
+msgid "Grid Layout:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-grid.php:308
-msgid "Display as small posts grid with thumbnails"
+#: inc/widgets/widget-category-posts-grid.php:360
+msgid "Two Columns Grid"
+msgstr ""
+
+#: inc/widgets/widget-category-posts-grid.php:361
+msgid "Three Columns Grid"
 msgstr ""

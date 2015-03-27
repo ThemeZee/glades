@@ -7,7 +7,7 @@
 /*========================== CUSTOMIZER SANITIZE FUNCTIONS ==========================*/
 
 // Sanitize checkboxes
-function cardigan_sanitize_checkbox( $value ) {
+function glades_sanitize_checkbox( $value ) {
 
 	if ( $value == 1) :
         return 1;
@@ -18,7 +18,7 @@ function cardigan_sanitize_checkbox( $value ) {
 
 
 // Sanitize the site layout value.
-function cardigan_sanitize_layout( $value ) {
+function glades_sanitize_layout( $value ) {
 
 	if ( ! in_array( $value, array( 'wide', 'boxed' ), true ) ) :
         $value = 'wide';
@@ -29,7 +29,7 @@ function cardigan_sanitize_layout( $value ) {
 
 
 // Sanitize the sidebar value.
-function cardigan_sanitize_sidebar( $value ) {
+function glades_sanitize_sidebar( $value ) {
 
 	if ( ! in_array( $value, array( 'left-sidebar', 'right-sidebar' ), true ) ) :
         $value = 'right-sidebar';
@@ -40,7 +40,7 @@ function cardigan_sanitize_sidebar( $value ) {
 
 
 // Sanitize the post length value.
-function cardigan_sanitize_post_length( $value ) {
+function glades_sanitize_post_length( $value ) {
 
 	if ( ! in_array( $value, array( 'index', 'excerpt' ), true ) ) :
         $value = 'excerpt';
@@ -51,7 +51,7 @@ function cardigan_sanitize_post_length( $value ) {
 
 
 // Sanitize footer content textarea
-function cardigan_sanitize_footer_text( $value ) {
+function glades_sanitize_footer_text( $value ) {
 
 	if ( current_user_can('unfiltered_html') ) :
 		return $value;

@@ -1,9 +1,9 @@
 <?php 
-add_action('wp_head', 'cardigan_css_layout');
-function cardigan_css_layout() {
+add_action('wp_head', 'glades_css_layout');
+function glades_css_layout() {
 	
 	// Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
+	$theme_options = glades_theme_options();
 		
 	// Change Site Layout to boxed if activated
 	if ( isset($theme_options['layout']) and $theme_options['layout'] == 'boxed' ) :

@@ -6,15 +6,15 @@
 
 			<div class="type-page">
 			
-				<h2 class="page-title"><?php _e('404 Error: Not found', 'cardigan'); ?></h2>
+				<h2 class="page-title"><?php _e('404 Error: Not found', 'glades'); ?></h2>
 				
 				<div class="entry">
-					<p><?php _e('The page you trying to reach does not exist, or has been moved. Please use the menus or the search box to find what you are looking for', 'cardigan'); ?></p>
+					<p><?php _e('The page you trying to reach does not exist, or has been moved. Please use the menus or the search box to find what you are looking for', 'glades'); ?></p>
 					
-					<h2><?php _e('Search', 'cardigan'); ?></h2>
+					<h2><?php _e('Search', 'glades'); ?></h2>
 					<?php get_search_form(); ?>
 
-					<h2><?php _e('Recent Posts', 'cardigan'); ?></h2>
+					<h2><?php _e('Recent Posts', 'glades'); ?></h2>
 					<ul>
 						<?php
 							$recent_posts = wp_get_recent_posts(array('numberposts' => '8', 'post_status' => 'publish'));
@@ -24,7 +24,7 @@
 						?>
 					</ul>
 					
-					<h2><?php _e('Pages', 'cardigan'); ?></h2>
+					<h2><?php _e('Pages', 'glades'); ?></h2>
 					<ul>
 						<?php wp_list_pages('title_li='); ?>
 					</ul>

@@ -8,14 +8,14 @@
  */
 
 // Passing Variables to Featured Post Slider Slider ( js/slider.js)
-add_action('wp_enqueue_scripts', 'cardigan_custom_slider_params');
+add_action('wp_enqueue_scripts', 'glades_custom_slider_params');
 
-if ( ! function_exists( 'cardigan_custom_slider_params' ) ):
+if ( ! function_exists( 'glades_custom_slider_params' ) ):
 
-function cardigan_custom_slider_params() { 
+function glades_custom_slider_params() { 
 	
 	// Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
+	$theme_options = glades_theme_options();
 	
 	// Set Parameters array
 	$params = array();
@@ -26,7 +26,7 @@ function cardigan_custom_slider_params() {
 	endif;
 	
 	// Passing Parameters to Javascript
-	wp_localize_script( 'cardigan-post-slider', 'cardigan_slider_params', $params );
+	wp_localize_script( 'glades-post-slider', 'glades_slider_params', $params );
 }
 
 endif;

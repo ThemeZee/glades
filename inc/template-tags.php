@@ -9,9 +9,9 @@
 	
 
 // Display Site Title
-add_action( 'cardigan_site_title', 'cardigan_display_site_title' );
+add_action( 'glades_site_title', 'glades_display_site_title' );
 
-function cardigan_display_site_title() { ?>
+function glades_display_site_title() { ?>
 
 	<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 		<h1 class="site-title"><?php bloginfo('name'); ?></h1>
@@ -22,9 +22,9 @@ function cardigan_display_site_title() { ?>
 
 
 // Display Custom Header
-if ( ! function_exists( 'cardigan_display_custom_header' ) ):
+if ( ! function_exists( 'glades_display_custom_header' ) ):
 	
-	function cardigan_display_custom_header() {
+	function glades_display_custom_header() {
 		
 		// Don't display header image on template-magazine.php
 		if( is_page_template('template-magazine.php') )
@@ -34,7 +34,7 @@ if ( ! function_exists( 'cardigan_display_custom_header' ) ):
 		if( is_page() && has_post_thumbnail() ) :
 		?>
 			<div id="custom-header" class="featured-image-header">
-				<?php the_post_thumbnail('cardigan-header-image'); ?>
+				<?php the_post_thumbnail('glades-header-image'); ?>
 			</div>
 <?php
 		// Check if there is a custom header image
@@ -52,12 +52,12 @@ endif;
 
 
 // Display Postmeta Data
-if ( ! function_exists( 'cardigan_display_postmeta' ) ):
+if ( ! function_exists( 'glades_display_postmeta' ) ):
 	
-	function cardigan_display_postmeta() { ?>
+	function glades_display_postmeta() { ?>
 		
 		<span class="meta-date">
-		<?php printf(__('<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s">%4$s</time></a>', 'cardigan'), 
+		<?php printf(__('<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s">%4$s</time></a>', 'glades'), 
 				esc_url( get_permalink() ),
 				esc_attr( get_the_time() ),
 				esc_attr( get_the_date( 'c' ) ),
@@ -67,9 +67,9 @@ if ( ! function_exists( 'cardigan_display_postmeta' ) ):
 		</span>
 		
 		<span class="meta-author">
-		<?php printf(__('<a href="%1$s" title="%2$s" rel="author">%3$s</a>', 'cardigan'), 
+		<?php printf(__('<a href="%1$s" title="%2$s" rel="author">%3$s</a>', 'glades'), 
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_attr( sprintf( __( 'View all posts by %s', 'cardigan' ), get_the_author() ) ),
+				esc_attr( sprintf( __( 'View all posts by %s', 'glades' ), get_the_author() ) ),
 				get_the_author()
 			);
 		?>
@@ -82,7 +82,7 @@ if ( ! function_exists( 'cardigan_display_postmeta' ) ):
 	<?php if ( comments_open() ) : ?>
 		
 		<span class="meta-comments">
-			<?php comments_popup_link( __('Leave a comment', 'cardigan'),__('One comment','cardigan'),__('% comments','cardigan') ); ?>
+			<?php comments_popup_link( __('Leave a comment', 'glades'),__('One comment','glades'),__('% comments','glades') ); ?>
 		</span>
 		
 	<?php endif;
@@ -93,10 +93,10 @@ endif;
 
 
 // Display Post Thumbnail on Archive Pages
-function cardigan_display_thumbnail_index() {
+function glades_display_thumbnail_index() {
 	
 	// Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
+	$theme_options = glades_theme_options();
 	
 	// Display Post Thumbnail if activated
 	if ( isset($theme_options['post_thumbnails_index']) and $theme_options['post_thumbnails_index'] == true ) : ?>
@@ -112,10 +112,10 @@ function cardigan_display_thumbnail_index() {
 
 
 // Display Post Thumbnail on single posts
-function cardigan_display_thumbnail_single() {
+function glades_display_thumbnail_single() {
 	
 	// Get Theme Options from Database
-	$theme_options = cardigan_theme_options();
+	$theme_options = glades_theme_options();
 	
 	// Display Post Thumbnail if activated
 	if ( isset($theme_options['post_thumbnails_single']) and $theme_options['post_thumbnails_single'] == true ) :
@@ -128,9 +128,9 @@ function cardigan_display_thumbnail_single() {
 
 
 // Display Postinfo Data
-if ( ! function_exists( 'cardigan_display_postinfo' ) ):
+if ( ! function_exists( 'glades_display_postinfo' ) ):
 	
-	function cardigan_display_postinfo() {
+	function glades_display_postinfo() {
 		
 		$tag_list = get_the_tag_list('', '');
 		if ( $tag_list ) : ?>
@@ -146,9 +146,9 @@ endif;
 
 	
 // Display Content Pagination
-if ( ! function_exists( 'cardigan_display_pagination' ) ):
+if ( ! function_exists( 'glades_display_pagination' ) ):
 	
-	function cardigan_display_pagination() { 
+	function glades_display_pagination() { 
 		
 		global $wp_query;
 
@@ -180,12 +180,12 @@ endif;
 
 
 // Display Footer Text
-if ( ! function_exists( 'cardigan_display_footer_text' ) ):
+if ( ! function_exists( 'glades_display_footer_text' ) ):
 
-	function cardigan_display_footer_text() { 
+	function glades_display_footer_text() { 
 
 		// Get Theme Options from Database
-		$theme_options = cardigan_theme_options();
+		$theme_options = glades_theme_options();
 
 		if ( isset( $theme_options['footer_text'] ) and $theme_options['footer_text'] <> '' ) :
 			
@@ -198,19 +198,19 @@ endif;
 
 
 // Display Credit Link
-add_action( 'cardigan_credit_link', 'cardigan_display_credit_link' );
+add_action( 'glades_credit_link', 'glades_display_credit_link' );
 
-function cardigan_display_credit_link() { 
+function glades_display_credit_link() { 
 		
-	printf(__( 'Powered by %1$s and %2$s.', 'cardigan' ), 
-		sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'cardigan' ) ),
-		sprintf( '<a href="http://themezee.com/themes/cardigan/" title="Cardigan WordPress Theme">%s</a>', __( 'Cardigan', 'cardigan' ) )
+	printf(__( 'Powered by %1$s and %2$s.', 'glades' ), 
+		sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'glades' ) ),
+		sprintf( '<a href="http://themezee.com/themes/glades/" title="Glades WordPress Theme">%s</a>', __( 'Glades', 'glades' ) )
 	); 
 }
 
 
 // Display Social Icons
-function cardigan_display_social_icons() {
+function glades_display_social_icons() {
 
 	// Check if there is a social_icons menu
 	if( has_nav_menu( 'social' ) ) :
@@ -233,7 +233,7 @@ function cardigan_display_social_icons() {
 	else: // Display Hint how to configure Social Icons ?>
 
 		<p class="social-icons-hint">
-			<?php _e('Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" theme location.', 'cardigan'); ?>
+			<?php _e('Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" theme location.', 'glades'); ?>
 		</p>
 <?php
 	endif;
