@@ -715,10 +715,12 @@ input, textarea, select {
 /* Text Elements
 -------------------------------------------------------------- */
 .entry {
-	line-height: 1.6em;
+	line-height: 1.7em;
 	margin: 0.5em 0;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
+	font-size: 1.05em;
+	color: #444;
 }
 .entry p, .comment p {
 	margin: 0.75em 0;

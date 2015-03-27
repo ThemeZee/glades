@@ -314,6 +314,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 				$args = array(
 					'show_option_all'    => __('All Categories', 'cardigan'),
 					'show_count' 		 => true,
+					'hide_empty'		 => false,
 					'selected'           => $category_one,
 					'name'               => $this->get_field_name('category_one'),
 					'id'                 => $this->get_field_id('category_one')
@@ -334,6 +335,7 @@ class Cardigan_Category_Posts_Columns_Widget extends WP_Widget {
 				$args = array(
 					'show_option_all'    => __('All Categories', 'cardigan'),
 					'show_count' 		 => true,
+					'hide_empty'		 => false,
 					'selected'           => $category_two,
 					'name'               => $this->get_field_name('category_two'),
 					'id'                 => $this->get_field_id('category_two')

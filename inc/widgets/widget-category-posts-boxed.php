@@ -385,6 +385,7 @@ class Cardigan_Category_Posts_Boxed_Widget extends WP_Widget {
 				$args = array(
 					'show_option_all'    => __('All Categories', 'cardigan'),
 					'show_count' 		 => true,
+					'hide_empty'		 => false,
 					'selected'           => $category,
 					'name'               => $this->get_field_name('category'),
 					'id'                 => $this->get_field_id('category')
