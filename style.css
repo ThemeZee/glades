@@ -1,7 +1,7 @@
 /*======================================
 Theme Name: Glades
 Theme URI: http://themezee.com/themes/glades/
-Description: Glades is a great way to start your personal blog or magazine website today. The theme is very easy to use and looks awesome on every device. It includes a beautiful featured post slideshow and a clean and flexible Magazine Homepage template. Hope you enjoy it!
+Description: Glades is a modern Magazine Theme for a local news or any other content focused website. The magazine-styled homepage is built with WordPress core features like Customizer and Widgets, which makes the setup super fast, flexible and easy. The theme comes with a beautiful Featured Content area and responsive design, looking great on every device.
 Version: 1.0
 Author: ThemeZee
 Author URI: http://themezee.com
@@ -58,7 +58,7 @@ html {
 }
 body {
 	font-family: 'PT Sans', 'Times New Roman', Tahoma;
-	font-size: 1.0em;
+	font-size: 1.05em;
 	border: 0;
 	color: #111;
 	background-color: #e5e5e5;
@@ -254,7 +254,7 @@ input, textarea, select {
 }
 #logo .site-title {
 	padding: 0.7em 0.2em 0.2em;
-	font-size: 2.4em;
+	font-size: 2.3em;
 	color: #fff;
 	font-family: 'Contrail One', Tahoma, Arial;
 }
@@ -271,11 +271,13 @@ input, textarea, select {
 }
 
 /* Custom Header Image */
-#custom-header {
-	margin: 1px 0;
+#custom-header-wrap {
+	margin-top: 1px;
+	background: #ddd;
+	text-align: center;
 }
 #custom-header img {
-	max-width: 1320px;
+	max-width: 2500px;
 	vertical-align: top;
 	width: 100%;
 	height: auto;
@@ -303,7 +305,7 @@ input, textarea, select {
 #mainnav-menu a {
 	display: block;
 	font-family: 'Contrail One', Tahoma, Arial;
-	font-size: 1.05em;
+	font-size: 1.0em;
 	text-transform: uppercase;
 	padding: 2.1em 1.4em;
 	text-decoration: none;
@@ -383,7 +385,7 @@ input, textarea, select {
 .widgettitle span {
 	display: inline-block;
 	font-family: 'Contrail One', Tahoma, Arial;
-	font-size: 1.0em;
+	font-size: 0.95em;
 	line-height: 1.4em;
 	text-transform: uppercase;
 	color: #fff;
@@ -400,12 +402,17 @@ input, textarea, select {
 }
 .widget ul {
 	line-height: 1.5em;
-	margin: 0 0.5em;
+	margin: -0.5em 0;
 	list-style: circle inside;
 }
 .widget ul .children {
 	padding: 0;
-	margin: 0.5em 0 0.5em 1em;
+	margin: 0.4em 0 0.8em 0.4em;
+	border-top: 1px solid #eee;
+}
+.widget ul li {
+	border-bottom: 1px solid #eee;
+	padding: 0.3em;
 }
 .widget a:link, .widget a:visited  {
 	text-decoration: none;
@@ -424,6 +431,107 @@ input, textarea, select {
 
 /* Custom Widgets
 -------------------------------------------------------------- */
+
+/* Default Archive & Category Wigdets */
+.widget_archive ul, .widget_categories ul {
+	list-style: none;
+}
+.widget_archive ul li, .widget_categories ul li {
+	float: left;
+	width: 100%;
+	text-align: right;
+	color: #888;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.widget_archive ul li a, .widget_categories ul li a {
+	float: left;
+	font-weight: normal;
+}
+.widget_archive ul li a:before, .widget_categories ul li a:before {
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 20px 'Genericons';
+	vertical-align: top;
+	color: #888;
+	margin: 0.1em 0.3em 0 0;
+}
+.widget_archive ul li a:before {
+	content: '\f307';
+}
+.widget_categories ul li a:before {
+	content: '\f301';
+}
+
+/* Default Recent Posts & Comments Wigdets */
+.widget_recent_entries ul, .widget_recent_comments ul {
+	list-style: none;
+}
+.widget_recent_entries ul li .post-date {
+	color: #888;
+	font-size: 0.8em;
+	font-style: italic;
+}
+.widget_recent_entries ul li:before, .widget_recent_comments ul li:before {
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 20px 'Genericons';
+	vertical-align: top;
+	color: #888;
+	margin: 0.1em 0.3em 0 0;
+}
+.widget_recent_entries ul li:before {
+	content: '\f303';
+}
+.widget_recent_comments ul li:before {
+	content: '\f300';
+}
+
+/* Default Meta & Pages Wigdets */
+.widget_meta ul, .widget_pages ul {
+	list-style: none;
+}
+.widget_meta ul li a:before, .widget_pages ul li a:before {
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 18px 'Genericons';
+	vertical-align: top;
+	color: #888;
+	margin: 0.2em 0.1em 0 0;
+	content: '\f432';
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	-ms-transform:rotate(90deg);
+}
+
+
+/* Tagcloud Widget */
+.widget_tag_cloud .tagcloud {
+	font-family: 'Contrail One', Tahoma, Arial;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	line-height: 1.4em;
+}
+.widget_tag_cloud .tagcloud a {
+	float: left;
+	display: inline-block;
+	margin: 0 2px 2px 0;
+	padding: 0.3em 0.6em;
+	text-decoration: none;
+	color: #222;
+	background: #ddd;
+	font-size: 1.0em !important;
+}
+.widget_tag_cloud .tagcloud a:link, .widget_tag_cloud .tagcloud a:visited {
+	color: #222;
+}
+.widget_tag_cloud .tagcloud a:hover, .widget_tag_cloud .tagcloud a:active {
+	background-color: #eee;
+	text-decoration: none;
+}
+
 
 /* Theme Search Widget */
 .search-form {
@@ -533,7 +641,7 @@ input, textarea, select {
 	margin: 0 0 2em 0;
 }
 .page-title, .post-title {
-	font-size: 2.6em;
+	font-size: 2.5em;
 	font-family: 'Contrail One', Tahoma, Arial;
 	padding: 0.1em 0;
 	color: #1188cc;
@@ -649,7 +757,7 @@ input, textarea, select {
 	color: #fff;
 	background: #1188cc;
 	font-family: 'Contrail One', Tahoma, Arial;
-	font-size: 0.9em;
+	font-size: 0.95em;
 	text-transform: uppercase;
 }
 .more-link:link, .more-link:visited  {
@@ -673,7 +781,7 @@ input, textarea, select {
 .archive-title  span {
 	display: inline-block;
 	font-family: 'Contrail One', Tahoma, Arial;
-	font-size: 1.0em;
+	font-size: 0.95em;
 	line-height: 1.4em;
 	text-transform: uppercase;
 	color: #fff;
@@ -685,7 +793,7 @@ input, textarea, select {
 /* Theme Pagination */
 .post-pagination {
 	font-family: 'Contrail One', Tahoma, Arial;
-	font-size: 1.0em;
+	font-size: 0.95m;
 	line-height: 1.4em;
 }
 .post-pagination a {
@@ -719,7 +827,6 @@ input, textarea, select {
 	margin: 0.5em 0;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
-	font-size: 1.05em;
 	color: #444;
 }
 .entry p, .comment p {
@@ -1122,7 +1229,7 @@ embed, iframe, object, video {
 #comments .comments-title span {
 	display: inline-block;
 	font-family: 'Contrail One', Tahoma, Arial;
-	font-size: 1.0em;
+	font-size: 0.95em;
 	line-height: 1.4em;
 	text-transform: uppercase;
 	color: #fff;
@@ -1153,7 +1260,7 @@ embed, iframe, object, video {
 	clear: both;
 }
 .comment .comment-author .fn {
-	font-size: 1.1em;
+	font-size: 1.05em;
 	padding: 0.2em 0;
 	font-weight: bold;
 }
@@ -1164,7 +1271,7 @@ embed, iframe, object, video {
 	font-style: italic;
 }
 .comment .comment-meta {
-	font-size: 0.9em;
+	font-size: 0.85em;
 	margin-bottom: 1.2em;
 }
 .comment .comment-meta a:link, .comment .comment-meta a:visited, 
@@ -1223,7 +1330,7 @@ embed, iframe, object, video {
 	display: inline-block;
 	margin: 0;
 	font-family: 'Contrail One', Tahoma, Arial;
-	font-size: 1.0em;
+	font-size: 0.95em;
 	font-weight: normal;
 	line-height: 1.4em;
 	text-transform: uppercase;
@@ -1371,7 +1478,7 @@ embed, iframe, object, video {
 	text-decoration: none;
 }
 .widget-category-posts .large-post .post-title {
-	font-size: 1.7em;
+	font-size: 1.6em;
 }
 .widget-category-posts .large-post .wp-post-image {
 	margin: 0 0 0.4em 0;
@@ -1389,7 +1496,7 @@ embed, iframe, object, video {
 	margin: 0 0 0.2em 0;
 }
 .widget-category-posts .medium-post .post-title {
-	font-size: 1.3em;
+	font-size: 1.25em;
 }
 .widget-category-posts .medium-post .postmeta, .widget-category-posts .small-post .postmeta {
 	font-size: 0.75em;
@@ -1548,9 +1655,7 @@ embed, iframe, object, video {
 /*============================ MEDIA QUERIES ============================*/
 
 @media only screen and (max-width: 80em) {
-	body {
-		border-top: 10px solid orange;
-	}
+
 	#featured-content .featured-content-left {
 		width: 66.7%;
 	}
@@ -1570,9 +1675,7 @@ embed, iframe, object, video {
 }
 /* Small screens | <1120px */
 @media only screen and (max-width: 70em) {
-	body {
-		border-top: 10px solid red;
-	}
+
 	#logo .site-title {
 		padding: 0.6em 0.2em 0.2em;
 		font-size: 2.2em;
@@ -1606,9 +1709,7 @@ embed, iframe, object, video {
 }
 /* Smaller screens | <1120px */
 @media only screen and (max-width: 65em) {
-	body {
-		border-top: 10px solid purple;
-	}
+
 	.container {
 		max-width: 100%;
 		width: 100%;
@@ -1647,9 +1748,7 @@ embed, iframe, object, video {
 }
 /* Tablets (landscape) | <960px */
 @media only screen and (max-width: 60em) {
-	body {
-		border-top: 10px solid blue;
-	}	
+
 	#content {
 		float: none;
 		width: 100%;
@@ -2004,9 +2103,7 @@ embed, iframe, object, video {
 
 /* Tablets (portrait) | <800px */
 @media only screen and (max-width: 50em) {
-	body {
-		border-top: 10px solid teal;
-	}
+
 	.container {
 		padding: 0 1.2em;
 	}
@@ -2099,9 +2196,7 @@ embed, iframe, object, video {
 
 /* Phablets (portrait) | <640px */
 @media only screen and (max-width: 40em) {
-	body {
-		border-top: 10px solid green;
-	}
+
 	.container {
 		padding: 0 1.2em;
 	}
@@ -2225,9 +2320,7 @@ embed, iframe, object, video {
 
 /* Smartphones | <480px */
 @media only screen and (max-width: 30em) {
-	body {
-		border-top: 10px solid brown;
-	}
+
 	#logo .site-title {
 		font-size: 2.2em;
 	}
@@ -2370,9 +2463,6 @@ embed, iframe, object, video {
 
 /* Smartphones | <320px */
 @media only screen and (max-width: 20em) {
-	body {
-		border-top: 10px solid yellow;
-	}
 	#logo .site-title {
 		font-size: 2.0em;
 	}

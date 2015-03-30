@@ -77,7 +77,7 @@ function glades_setup() {
 	// Add Custom Header
 	add_theme_support('custom-header', array(
 		'header-text' => false,
-		'width'	=> 1340,
+		'width'	=> 2500,
 		'height' => 200,
 		'flex-height' => true));
 		
@@ -110,7 +110,7 @@ if ( ! function_exists( 'glades_add_image_sizes' ) ):
 function glades_add_image_sizes() {
 	
 	// Add Custom Header Image Size
-	add_image_size( 'glades-header-image', 1320, 250, true);
+	add_image_size( 'glades-header-image', 2500, 200, true);
 	
 	// Add Featured Content Image Sizes
 	add_image_size( 'glades-featured-content-left', 820, 370, true);
@@ -192,12 +192,6 @@ function glades_has_featured_content() {
 add_filter('excerpt_length', 'glades_excerpt_length');
 function glades_excerpt_length($length) {
     return 60;
-}
-
-
-// Slideshow Excerpt Length
-function glades_slideshow_excerpt_length($length) {
-    return 32;
 }
 
 // Category Posts Large Excerpt Length

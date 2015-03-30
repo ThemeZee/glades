@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Glades\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-27 16:10+0100\n"
-"PO-Revision-Date: 2015-03-27 16:10+0100\n"
+"POT-Creation-Date: 2015-03-30 17:38+0100\n"
+"PO-Revision-Date: 2015-03-30 17:38+0100\n"
 "Last-Translator: Ulrich Pogson <grapplerulrich@gmail.com>\n"
 "Language-Team: ThemeZee <contact@themezee.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: 404.php:9
 msgid "404 Error: Not found"
-msgstr ""
+msgstr "404 Error: Not found"
 
 #: 404.php:12
 msgid ""
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: template-magazine.php:39
+#: template-magazine.php:40
 msgid ""
 "There are no widgets to be displayed. Please go to Appearance -> Widgets and "
 "add at least one widget to the \"Magazine Homepage\" widget area. You can "

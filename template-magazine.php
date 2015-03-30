@@ -8,15 +8,16 @@ Template Name: Magazine Homepage
 	<div id="wrap" class="container clearfix template-magazine">
 	
 		<?php // Get Theme Options from Database
-			$theme_options = glades_theme_options();
+		$theme_options = glades_theme_options();
+				
+		// Display Featured Posts on homepage
+		if ( glades_has_featured_content() ) :
 			
-			// Display Featured Post Slideshow if activated
-			if ( isset($theme_options['slider_active_magazine']) and $theme_options['slider_active_magazine'] == true ) :
-
-				get_template_part( 'featured-content' );
-
-			endif; 
-		?>
+			// Include the featured content template.
+			get_template_part( 'featured-content' );
+			
+		endif;
+	?>
 	
 		<section id="content" class="primary" role="main">
 		

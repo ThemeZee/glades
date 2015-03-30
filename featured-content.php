@@ -7,9 +7,6 @@
 // Get our Featured Content posts
 $featured_posts = glades_get_featured_content();
 
-// Limit the number of words in slideshow post excerpts
-add_filter('excerpt_length', 'glades_featured_content_excerpt_length');
-
 // Set loop count
 $loop_count = 1;
 
@@ -21,7 +18,7 @@ $loop_count = 1;
 		foreach ( $featured_posts as $post ) : setup_postdata( $post ); 
 		
 			// Display first featured post (big)
-			if(isset($loop_count) and $loop_count == 1) : ?>
+			if( isset($loop_count) and $loop_count == 1 ) : ?>
 			
 			<div class="featured-content-left">
 	
@@ -83,9 +80,6 @@ $loop_count = 1;
 	</div><!-- end #featured-content -->
 
 <?php
-
-// Remove excerpt filter
-remove_filter('excerpt_length', 'glades_featured_content_excerpt_length');
 
 // Reset Postdata
 wp_reset_postdata();
