@@ -2,6 +2,13 @@
 Glades Changelog
 ===================================
 
+Version 1.0.1
+-----------------------------------
+[added] new classes entry-title, updated and author for google microformats structure
+[added] clearfix class to Magazine Homepage widget area
+[removed] unnecessary HTML markup and Genericons in theme-info.php
+[fixed] styling of footer line and cleaned up CSS in style.css
+
 Version 1.0
 -----------------------------------
 Final Version

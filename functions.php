@@ -146,7 +146,7 @@ function glades_register_sidebars() {
 		'name' => __( 'Magazine Homepage', 'glades' ),
 		'id' => 'magazine-homepage',
 		'description' => __( 'Appears on Magazine Homepage template only. You can use the Category Posts widgets here.', 'glades' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',

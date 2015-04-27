@@ -2,7 +2,7 @@
 Theme Name: Glades
 Theme URI: http://themezee.com/themes/glades/
 Description: Glades is a modern Magazine Theme for a local news or any other content focused website. The magazine-styled homepage is built with WordPress core features like Customizer and Widgets, which makes the setup super fast, flexible and easy. The theme comes with a beautiful Featured Content area and responsive design, looking great on every device.
-Version: 1.0
+Version: 1.0.1
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, blue, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, red, silver, white, green, gray
@@ -246,12 +246,6 @@ input, textarea, select {
 	float: left;
 	max-width: 100%;
 }
-#logo .site-logo {
-	border: 0;
-	max-width: 100%;
-	height: auto;
-	vertical-align: top;
-}
 #logo .site-title {
 	padding: 0.7em 0.2em 0.2em;
 	font-size: 2.3em;
@@ -338,7 +332,7 @@ input, textarea, select {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-#mainnav-menu ul a:link, #mainnav-menu ul a:visited{
+#mainnav-menu ul a:link, #mainnav-menu ul a:visited {
 	color: #1188cc;
 	font-size: 0.85em;
 	text-decoration: none;
@@ -693,7 +687,7 @@ input, textarea, select {
 .postmeta a:link, .postmeta a:visited {
 	color: #333;
 }
-.postmeta a:hover, .postmeta a:active{
+.postmeta a:hover, .postmeta a:active {
 	color: #1188cc;
 	text-decoration: none;
 }
@@ -1630,11 +1624,12 @@ embed, iframe, object, video {
 /* Footer
 -------------------------------------------------------------- */
 #footer-wrap {
-	background: #151515;
+	background: #1188cc;
 }
 #footer {
 	padding: 0.8em 1.5em;
 	color: #fff;
+	background: #151515;
 }
 #footer-line {
 	font-size: 0.9em;
