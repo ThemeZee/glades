@@ -94,7 +94,6 @@ function glades_setup() {
 	// Register Navigation Menus
 	register_nav_menu( 'primary', __('Main Navigation', 'glades') );
 	register_nav_menu( 'secondary', __('Top Navigation', 'glades') );
-	register_nav_menu( 'footer', __('Footer Navigation', 'glades') );
 	
 	// Register Social Icons Menu
 	register_nav_menu( 'social', __('Social Icons', 'glades') );

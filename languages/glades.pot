@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Glades\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-30 17:38+0100\n"
-"PO-Revision-Date: 2015-03-30 17:38+0100\n"
+"POT-Creation-Date: 2015-04-30 10:23+0100\n"
+"PO-Revision-Date: 2015-04-30 10:23+0100\n"
 "Last-Translator: Ulrich Pogson <grapplerulrich@gmail.com>\n"
 "Language-Team: ThemeZee <contact@themezee.com>\n"
 "MIME-Version: 1.0\n"
@@ -63,14 +63,14 @@ msgstr ""
 msgid "Enter password to view comments."
 msgstr ""
 
-#: comments.php:20 inc/template-tags.php:85
+#: comments.php:20 inc/template-tags.php:89
 #: inc/widgets/widget-category-posts-boxed.php:314
 #: inc/widgets/widget-category-posts-columns.php:240
 #: inc/widgets/widget-category-posts-grid.php:273
 msgid "One comment"
 msgstr ""
 
-#: comments.php:20 inc/template-tags.php:85
+#: comments.php:20 inc/template-tags.php:89
 #: inc/widgets/widget-category-posts-boxed.php:314
 #: inc/widgets/widget-category-posts-columns.php:240
 #: inc/widgets/widget-category-posts-grid.php:273
@@ -119,24 +119,24 @@ msgid ""
 "widgets here."
 msgstr ""
 
-#: functions.php:228
+#: functions.php:222
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:229 functions.php:249
+#: functions.php:223 functions.php:243
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:240
+#: functions.php:234
 #, php-format
 msgid "<span class=\"fn\">%s</span>"
 msgstr ""
 
-#: functions.php:244
+#: functions.php:238
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:248
+#: functions.php:242
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
@@ -219,43 +219,43 @@ msgstr ""
 msgid "Don&rsquo;t display tag on front end."
 msgstr ""
 
-#: inc/template-tags.php:60
+#: inc/template-tags.php:64
 #, php-format
 msgid ""
-"<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time datetime=\"%3$s\">"
-"%4$s</time></a>"
+"<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date "
+"published updated\"datetime=\"%3$s\">%4$s</time></a>"
 msgstr ""
 
-#: inc/template-tags.php:70
+#: inc/template-tags.php:74
 #, php-format
-msgid "<a href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a>"
+msgid "<a class=\"fn\" href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</a>"
 msgstr ""
 
-#: inc/template-tags.php:72
+#: inc/template-tags.php:76
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:85 inc/widgets/widget-category-posts-boxed.php:314
+#: inc/template-tags.php:89 inc/widgets/widget-category-posts-boxed.php:314
 #: inc/widgets/widget-category-posts-columns.php:240
 #: inc/widgets/widget-category-posts-grid.php:273
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:205
+#: inc/template-tags.php:209
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
 
-#: inc/template-tags.php:206
+#: inc/template-tags.php:210
 msgid "WordPress"
 msgstr ""
 
-#: inc/template-tags.php:207
+#: inc/template-tags.php:211
 msgid "Glades"
 msgstr ""
 
-#: inc/template-tags.php:236
+#: inc/template-tags.php:240
 msgid ""
 "Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with "
 "custom links to all your social networks. Then click on \"Manage Locations\" "
@@ -291,7 +291,7 @@ msgstr ""
 msgid "Theme Demo"
 msgstr ""
 
-#: inc/theme-info.php:45 inc/theme-info.php:66
+#: inc/theme-info.php:45 inc/theme-info.php:60
 msgid "Theme Documentation"
 msgstr ""
 
@@ -299,56 +299,56 @@ msgstr ""
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/theme-info.php:63
+#: inc/theme-info.php:57
 #, php-format
 msgid "Getting Started with %s"
 msgstr ""
 
-#: inc/theme-info.php:68
+#: inc/theme-info.php:62
 msgid ""
 "Need any help to setup and configure this theme? We got you covered with an "
 "extensive theme documentation on our website."
 msgstr ""
 
-#: inc/theme-info.php:70
+#: inc/theme-info.php:64
 msgid "Visit Glades Documentation"
 msgstr ""
 
-#: inc/theme-info.php:75 inc/customizer/customizer.php:27
+#: inc/theme-info.php:69 inc/customizer/customizer.php:27
 msgid "Theme Options"
 msgstr ""
 
-#: inc/theme-info.php:77
+#: inc/theme-info.php:71
 msgid ""
 "Glades supports the awesome Theme Customizer for all theme settings. Click "
 "\"Customize Theme\" to open the Customizer now."
 msgstr ""
 
-#: inc/theme-info.php:79
+#: inc/theme-info.php:73
 msgid "Customize Theme"
 msgstr ""
 
-#: inc/theme-info.php:84
+#: inc/theme-info.php:78
 msgid "Pro Version"
 msgstr ""
 
-#: inc/theme-info.php:86
+#: inc/theme-info.php:80
 msgid ""
 "Need more features? Check out the PRO version which comes with additional "
 "features and advanced customization options."
 msgstr ""
 
-#: inc/theme-info.php:88 inc/customizer/sections/customizer-upgrade.php:62
+#: inc/theme-info.php:82 inc/customizer/sections/customizer-upgrade.php:62
 msgid "Learn more about Glades Pro"
 msgstr ""
 
-#: inc/theme-info.php:108
+#: inc/theme-info.php:102
 #, php-format
 msgid ""
 "Glades is proudly brought to you by %1s. If you like this theme, %2s :) "
 msgstr ""
 
-#: inc/theme-info.php:110
+#: inc/theme-info.php:104
 msgid "rate it"
 msgstr ""
 
