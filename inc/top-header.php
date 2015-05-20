@@ -12,7 +12,6 @@
 ?>
 
 	<div id="topheader" class="container clearfix">
-		<p id="topnav-icon-tablet" class="topnav-icon"></p><p id="topnav-icon-phone" class="topnav-icon"></p><p id="social-menu-icon"></p>
 		
 		<?php // Display Social Icons in Navigation
 			if ( isset($theme_options['header_icons']) and $theme_options['header_icons'] == true ) : ?>
@@ -33,7 +32,7 @@
 					'container' => false, 
 					'menu_id' => 'topnav-menu', 
 					'echo' => true, 
-					'fallback_cb' => 'glades_default_menu')
+					'fallback_cb' => '')
 				);
 			?>
 		</nav>

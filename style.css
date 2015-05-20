@@ -2,7 +2,7 @@
 Theme Name: Glades
 Theme URI: http://themezee.com/themes/glades/
 Description: Glades is a modern Magazine Theme for a local news or any other content focused website. The magazine-styled homepage is built with WordPress core features like Customizer and Widgets, which makes the setup super fast, flexible and easy. The theme comes with a beautiful Featured Content area and responsive design, looking great on every device.
-Version: 1.0.1
+Version: 1.0.2
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, blue, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, red, silver, white, green, gray
@@ -152,10 +152,10 @@ input, textarea, select {
 #topheader-wrap #navi-social-icons {
 	float: right;
 }
-#topnav-icon-tablet, #topnav-icon, #social-menu-icon {
+.topnav-toggle, .topnav-icon, #social-menu-toggle, #social-menu-icon {
 	display: none;
 }
-#topheader-wrap #topnav-menu {
+#topnav-menu {
 	display: inline;
 	list-style-type: none;
 	list-style-position: outside;
@@ -283,7 +283,7 @@ input, textarea, select {
 #mainnav {
 	float: right;
 }
-#mainnav-icon {
+#mainnav-toggle, #mainnav-icon {
 	display: none;
 }
 #mainnav-menu {
@@ -1825,25 +1825,25 @@ embed, iframe, object, video {
 		display: inline;
 	}
 	
-	#topnav {
-		float: none;
-	}
-	#topnav-icon-tablet {
+	#topnav-toggle-tablet {
 		display: inline-block;
 	}
-	#topnav-icon-phone {
+	#topnav-toggle-phone {
 		display: none;
 	}
-	.topnav-icon {
-		padding: 0.67em;
+	.topnav-toggle {
+		margin: 0;
+		padding: 0.75em;
 		text-decoration: none;
 		color: #fff;
+		background: none;
+		border: none;
 	}
-	.topnav-icon:hover {
+	.topnav-toggle:hover {
 		cursor: pointer;
 		background: rgba(255,255,255,0.075);
 	}
-	.topnav-icon:after {
+	.topnav-toggle:after {
 		float: left;
 		display: inline-block;
 		font-size: 16px;
@@ -1858,15 +1858,15 @@ embed, iframe, object, video {
 	}
 	#topnav {
 		float: none;
-		display: none;
 	}
 	#topnav-menu {
+		display: none;
 		float: left;
 		width: 100%;
 	}
 	#topnav-menu a {
 		display: block;
-		padding: 1.4em;
+		padding: 1.3em;
 		border-top: 1px solid rgba(255,255,255,0.075);
 		font-size: 0.8em;
 		clear: left;
@@ -1907,18 +1907,18 @@ embed, iframe, object, video {
 		background: none;
 	}
 	
-	#topnav-menu .topnav-submenu-dropdown-icon {
+	#topnav-menu .submenu-dropdown-toggle {
 		float: right;
 		display: block;
 		margin: 0;
-		padding: 0.65em 0.8em;
+		padding: 0.75em 1.25em;
 	}
-	#topnav-menu .topnav-submenu-dropdown-icon:hover {
+	#topnav-menu .submenu-dropdown-toggle:hover {
 		cursor: pointer;
 		background: rgba(255,255,255,0.075);
 	}
-	#topnav-menu .topnav-submenu-dropdown-icon:before {
-		font-size: 28px;
+	#topnav-menu .submenu-dropdown-toggle:before {
+		font-size: 24px;
 		line-height: 1;
 		font-family: 'Genericons';
 		-webkit-font-smoothing: antialiased;
@@ -1928,8 +1928,20 @@ embed, iframe, object, video {
 		content: '\f431';
 		color: #fff;
 	}
-	#topnav-menu .topnav-submenu-dropdown-icon.active:before {
+	#topnav-menu .submenu-dropdown-toggle.active:before {
 		content: '\f432';
+	}
+	#topnav-menu ul .submenu-dropdown-toggle {
+		padding: 0.6em 1.2em;
+	}
+	#topnav-menu ul .submenu-dropdown-toggle:hover {
+		background: none;
+	}
+	#topnav-menu ul .submenu-dropdown-toggle:hover:before {
+		color: #aaa;
+	}
+	#topnav-menu ul .submenu-dropdown-toggle:before {
+		font-size: 22px;
 	}
 	
 	
@@ -1974,18 +1986,20 @@ embed, iframe, object, video {
 		display: inline;
 	}
 	
-	#mainnav-icon {
+	#mainnav-toggle {
 		float: right;
 		display: inline-block;
-		margin-top: 0.8em;
+		margin: 1em 0 0;
 		padding: 1em;
+		background: none;
+		border: none;
 		text-decoration: none;
 	}
-	#mainnav-icon:hover {
+	#mainnav-toggle:hover {
 		cursor: pointer;
 		color: #ddd;
 	}
-	#mainnav-icon:after {
+	#mainnav-toggle:after {
 		float: left;
 		display: inline-block;
 		font-size: 26px;
@@ -2041,13 +2055,11 @@ embed, iframe, object, video {
 		color: #ddd;
 	}
 	#mainnav-menu ul li ul {
-		float: left;
 		padding: 0;
 		width: 100%;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.075);
 	}
 	#mainnav-menu ul li ul a {
 		padding-left: 4em;
@@ -2056,19 +2068,19 @@ embed, iframe, object, video {
 		padding-left: 6em;
 	}
 	
-	#mainnav-menu .mainnav-submenu-dropdown-icon {
+	#mainnav-menu .submenu-dropdown-toggle {
 		float: right;
 		display: block;
 		margin: 0;
-		padding: 0.65em 0.8em;
+		padding: 0.7em 1.3em;
 	}
-	#mainnav-menu .mainnav-submenu-dropdown-icon:hover {
+	#mainnav-menu .submenu-dropdown-toggle:hover {
 		cursor: pointer;
 	}
-	#mainnav-menu .mainnav-submenu-dropdown-icon:hover:before {
+	#mainnav-menu .submenu-dropdown-toggle:hover:before {
 		color: #ddd;
 	}
-	#mainnav-menu .mainnav-submenu-dropdown-icon:before {
+	#mainnav-menu .submenu-dropdown-toggle:before {
 		font-size: 32px;
 		line-height: 1;
 		font-family: 'Genericons';
@@ -2079,8 +2091,14 @@ embed, iframe, object, video {
 		content: '\f431';
 		color: #fff;
 	}
-	#mainnav-menu .mainnav-submenu-dropdown-icon.active:before {
+	#mainnav-menu .submenu-dropdown-toggle.active:before {
 		content: '\f432';
+	}
+	#mainnav-menu ul .submenu-dropdown-toggle {
+		padding: 0.5em 1em;
+	}
+	#mainnav-menu ul .submenu-dropdown-toggle:before {
+		font-size: 26px;
 	}
 	
 	
@@ -2360,26 +2378,29 @@ embed, iframe, object, video {
 	}
 	
 	/* Mobile Main Navigation */
-	#topnav-icon-tablet {
+	#topnav-toggle-tablet {
 		display: none;
 	}
-	#topnav-icon-phone {
+	#topnav-toggle-phone {
 		display: inline-block;
 	}
 	
 	/* Social Menu Dropdown */
-	#social-menu-icon {
+	#social-menu-toggle {
 		float: right;
 		display: inline-block;
-		text-decoration: none;
+		margin: 0;
+		padding: 0.55em 0.6em 0.75em;
 		color: #fff;
-		padding: 0.6em;
+		background: none;
+		border: none;
+		text-decoration: none;
 	}
-	#social-menu-icon:hover {
+	#social-menu-toggle:hover {
 		cursor: pointer;
 		background: rgba(255,255,255,0.075);
 	}
-	#social-menu-icon:after {
+	#social-menu-toggle:after {
 		margin: 0;
 		display: inline-block;
 		font-size: 20px;
@@ -2461,10 +2482,10 @@ embed, iframe, object, video {
 	#logo .site-title {
 		font-size: 2.0em;
 	}
-	#mainnav-icon {
+	#mainnav-toggle {
 		padding: 0.6em;
 	}
-	#mainnav-icon:after {
+	#mainnav-toggle:after {
 		font-size: 20px;
 	}
 	.page-title, .post-title {
@@ -2505,7 +2526,7 @@ embed, iframe, object, video {
 /* Big Screens Navi Fix | >720px */
 @media only screen and (min-width: 55em) {
 	/* ensure navigation is visible on desktop version */
-	#mainnav-menu, #topnav {
+	#mainnav-menu, #topnav-menu {
 		display: block !important;
 	}
 	#topnav-menu li.menu-item:hover a {

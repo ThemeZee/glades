@@ -2,6 +2,12 @@
 Glades Changelog
 ===================================
 
+Version 1.0.2
+-----------------------------------
+[changed] navigation.js to use our new developed responsiveMenu function
+[added] dropdown icons and animations for nested submenus on mobile navigation
+[removed] unnecessary header-content.php file
+
 Version 1.0.1
 -----------------------------------
 [added] new classes entry-title, updated and author for google microformats structure
