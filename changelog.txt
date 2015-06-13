@@ -2,6 +2,11 @@
 Glades Changelog
 ===================================
 
+Version 1.0.3
+-----------------------------------
+[updated] Featured Content class to new version with many code improvements
+[added] new setting to display featured posts in latest blog post listing
+
 Version 1.0.2
 -----------------------------------
 [changed] navigation.js to use our new developed responsiveMenu function
