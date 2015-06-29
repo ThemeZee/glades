@@ -86,6 +86,84 @@ function glades_customize_register_post_settings( $wp_customize ) {
 		'priority' => 4
 		)
 	);
+	
+	// Add Postmeta Settings
+	$wp_customize->add_setting( 'glades_theme_options[postmeta_headline]', array(
+        'default'           => '',
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_attr'
+        )
+    );
+    $wp_customize->add_control( new Glades_Customize_Header_Control(
+        $wp_customize, 'glades_control_postmeta_headline', array(
+            'label' => __( 'Postmeta', 'glades' ),
+            'section' => 'glades_section_post',
+            'settings' => 'glades_theme_options[postmeta_headline]',
+            'priority' => 5
+            )
+        )
+    );
+	$wp_customize->add_setting( 'glades_theme_options[meta_date]', array(
+        'default'           => true,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'glades_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'glades_control_meta_date', array(
+        'label'    => __( 'Display date on posts.', 'glades' ),
+        'section'  => 'glades_section_post',
+        'settings' => 'glades_theme_options[meta_date]',
+        'type'     => 'checkbox',
+		'priority' => 6
+		)
+	);
+	$wp_customize->add_setting( 'glades_theme_options[meta_author]', array(
+        'default'           => true,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'glades_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'glades_control_meta_author', array(
+        'label'    => __( 'Display author on posts.', 'glades' ),
+        'section'  => 'glades_section_post',
+        'settings' => 'glades_theme_options[meta_author]',
+        'type'     => 'checkbox',
+		'priority' => 7
+		)
+	);
+	$wp_customize->add_setting( 'glades_theme_options[meta_category]', array(
+        'default'           => true,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'glades_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'glades_control_meta_category', array(
+        'label'    => __( 'Display categories on posts.', 'glades' ),
+        'section'  => 'glades_section_post',
+        'settings' => 'glades_theme_options[meta_category]',
+        'type'     => 'checkbox',
+		'priority' => 8
+		)
+	);
+	$wp_customize->add_setting( 'glades_theme_options[meta_tags]', array(
+        'default'           => true,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'glades_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'glades_control_meta_tags', array(
+        'label'    => __( 'Display tags on posts.', 'glades' ),
+        'section'  => 'glades_section_post',
+        'settings' => 'glades_theme_options[meta_tags]',
+        'type'     => 'checkbox',
+		'priority' => 9
+		)
+	);
 
 }
 

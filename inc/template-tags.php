@@ -58,38 +58,57 @@ endif;
 // Display Postmeta Data
 if ( ! function_exists( 'glades_display_postmeta' ) ):
 	
-	function glades_display_postmeta() { ?>
+	function glades_display_postmeta() { 
+	
+		// Get Theme Options from Database
+		$theme_options = glades_theme_options();
+
+		// Display Date unless user has deactivated it via settings
+		if ( isset($theme_options['meta_date']) and $theme_options['meta_date'] == true ) : ?>
 		
-		<span class="meta-date">
-		<?php printf(__('<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated"datetime="%3$s">%4$s</time></a>', 'glades'), 
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() )
-			);
-		?>
-		</span>
+			<span class="meta-date">
+			<?php printf(__('<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated"datetime="%3$s">%4$s</time></a>', 'glades'), 
+					esc_url( get_permalink() ),
+					esc_attr( get_the_time() ),
+					esc_attr( get_the_date( 'c' ) ),
+					esc_html( get_the_date() )
+				);
+			?>
+			</span>
+			
+		<?php endif; 
 		
-		<span class="meta-author author vcard">
-		<?php printf(__('<a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a>', 'glades'), 
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_attr( sprintf( __( 'View all posts by %s', 'glades' ), get_the_author() ) ),
-				get_the_author()
-			);
-		?>
-		</span>
+		// Display Author unless user has deactivated it via settings
+		if ( isset($theme_options['meta_author']) and $theme_options['meta_author'] == true ) : ?>	
 		
-		<span class="meta-category">
-			<?php echo get_the_category_list(', '); ?>
-		</span>
+			<span class="meta-author author vcard">
+			<?php printf(__('<a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a>', 'glades'), 
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+					esc_attr( sprintf( __( 'View all posts by %s', 'glades' ), get_the_author() ) ),
+					get_the_author()
+				);
+			?>
+			</span>
+			
+		<?php endif; 
 		
-	<?php if ( comments_open() ) : ?>
+		// Display Author unless user has deactivated it via settings
+		if ( isset($theme_options['meta_category']) and $theme_options['meta_category'] == true ) : ?>	
 		
-		<span class="meta-comments">
-			<?php comments_popup_link( __('Leave a comment', 'glades'),__('One comment','glades'),__('% comments','glades') ); ?>
-		</span>
+			<span class="meta-category">
+				<?php echo get_the_category_list(', '); ?>
+			</span>
 		
-	<?php endif;
+		<?php endif;
+
+		// Display Comments
+		if ( comments_open() ) : ?>
+		
+			<span class="meta-comments">
+				<?php comments_popup_link( __('Leave a comment', 'glades'),__('One comment','glades'),__('% comments','glades') ); ?>
+			</span>
+		
+		<?php endif;
 	
 	}
 	
@@ -134,14 +153,24 @@ function glades_display_thumbnail_single() {
 // Display Postinfo Data
 if ( ! function_exists( 'glades_display_postinfo' ) ):
 	
-	function glades_display_postinfo() {
+	function glades_display_postinfo() { 
+	
+		// Get Theme Options from Database
+		$theme_options = glades_theme_options();
+
+		// Display Date unless user has deactivated it via settings
+		if ( isset($theme_options['meta_tags']) and $theme_options['meta_tags'] == true ) :
+			
+			$tag_list = get_the_tag_list('', '');
+			
+			if ( $tag_list ) : ?>
+				
+				<span class="meta-tags">
+					<?php echo $tag_list; ?>
+				</span>
 		
-		$tag_list = get_the_tag_list('', '');
-		if ( $tag_list ) : ?>
-			<span class="meta-tags">
-				<?php echo $tag_list; ?>
-			</span>
-	<?php 
+			<?php endif;
+			
 		endif;
 
 	}

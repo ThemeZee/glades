@@ -8,7 +8,7 @@ class Glades_Category_Posts_Boxed_Widget extends WP_Widget {
 		// Setup Widget
 		$widget_ops = array(
 			'classname' => 'glades_category_posts_boxed', 
-			'description' => __('Display latest posts from category in boxed layout. Please use this widget ONLY on Frontpage Magazine widget area.', 'glades')
+			'description' => __('Displays your latest posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'glades')
 		);
 		$this->WP_Widget('glades_category_posts_boxed', __('Category Posts Boxed (Glades)', 'glades'), $widget_ops);
 		
