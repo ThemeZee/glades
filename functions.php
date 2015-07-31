@@ -34,15 +34,27 @@ function glades_enqueue_comment_reply() {
 
 // Retrieve Font URL to register default Google Fonts
 function glades_google_fonts_url() {
-    
-	$font_families = array('PT Sans:700,400', 'Contrail One');
-
-	$query_args = array(
-		'family' => urlencode( implode( '|', $font_families ) ),
-		'subset' => urlencode( 'latin,latin-ext' ),
-	);
-
-	$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+    $fonts_url = '';
+	
+	// Get Theme Options from Database
+	$theme_options = glades_theme_options();
+	
+	// Only embed Google Fonts if not deactivated
+	if ( ! ( isset($theme_options['deactivate_google_fonts']) and $theme_options['deactivate_google_fonts'] == true ) ) :
+		
+		// Define Default Fonts
+		$font_families = array('PT Sans:700,400', 'Contrail One');
+		
+		// Set Google Font Query Args
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		
+		// Create Fonts URL
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+		
+	endif;
 
     return apply_filters( 'glades_google_fonts_url', $fonts_url );
 }
