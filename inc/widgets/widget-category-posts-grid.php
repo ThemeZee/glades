@@ -10,7 +10,7 @@ class Glades_Category_Posts_Grid_Widget extends WP_Widget {
 			'classname' => 'glades_category_posts_grid', 
 			'description' => __('Displays your latest posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'glades')
 		);
-		$this->WP_Widget('glades_category_posts_grid', __('Category Posts Grid (Glades)', 'glades'), $widget_ops);
+		parent::__construct('glades_category_posts_grid', __('Category Posts Grid (Glades)', 'glades'), $widget_ops);
 		
 		// Delete Widget Cache on certain actions
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
