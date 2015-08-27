@@ -235,9 +235,9 @@ add_action( 'glades_credit_link', 'glades_display_credit_link' );
 
 function glades_display_credit_link() { 
 		
-	printf(__( 'Powered by %1$s and %2$s.', 'glades' ), 
-		sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'glades' ) ),
-		sprintf( '<a href="http://themezee.com/themes/glades/" title="Glades WordPress Theme">%s</a>', __( 'Glades', 'glades' ) )
+	printf( __( 'Powered by %1$s and %2$s.', 'glades' ), 
+		'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
+		'<a href="http://themezee.com/themes/glades/" title="Glades WordPress Theme">Glades</a>'
 	); 
 }
 

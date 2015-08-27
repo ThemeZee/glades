@@ -32,7 +32,7 @@ function glades_customize_register_general_settings( $wp_customize ) {
         'type'     => 'radio',
 		'priority' => 1,
         'choices'  => array(
-            'wide' => __( 'Wide Layout (default)', 'glades' ),
+            'wide' => __( 'Wide Layout (Fullwidth)', 'glades' ),
 			'boxed' => __( 'Boxed Layout', 'glades' )
 			)
 		)
