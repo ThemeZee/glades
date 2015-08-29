@@ -26,7 +26,7 @@ function glades_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_layout', array(
-        'label'    => __( 'Site Layout', 'glades' ),
+        'label'    => __( 'Theme Width', 'glades' ),
         'section'  => 'glades_section_general',
         'settings' => 'glades_theme_options[layout]',
         'type'     => 'radio',
@@ -47,7 +47,7 @@ function glades_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_sidebar', array(
-        'label'    => __( 'Sidebar', 'glades' ),
+        'label'    => __( 'Theme Layout', 'glades' ),
         'section'  => 'glades_section_general',
         'settings' => 'glades_theme_options[sidebar]',
         'type'     => 'radio',
