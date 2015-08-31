@@ -136,7 +136,7 @@ add_action( 'widgets_init', 'glades_register_sidebars' );
 if ( ! function_exists( 'glades_register_sidebars' ) ):
 function glades_register_sidebars() {
 
-	// Register Sidebars
+	// Register Sidebar
 	register_sidebar( array(
 		'name' => __( 'Sidebar', 'glades' ),
 		'id' => 'sidebar',
@@ -146,6 +146,8 @@ function glades_register_sidebars() {
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
 	));
+	
+	// Register Magazine Homepage
 	register_sidebar( array(
 		'name' => __( 'Magazine Homepage', 'glades' ),
 		'id' => 'magazine-homepage',
@@ -155,6 +157,11 @@ function glades_register_sidebars() {
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
 	));
+	
+	// Register Category Posts Widgets
+	register_widget('Glades_Category_Posts_Boxed_Widget');
+	register_widget('Glades_Category_Posts_Columns_Widget');
+	register_widget('Glades_Category_Posts_Grid_Widget');
 
 }
 endif;
