@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Everything\n"
 "Report-Msgid-Bugs-To: http://themezee.com/\n"
-"POT-Creation-Date: 2015-08-29 14:27+0100\n"
-"PO-Revision-Date: 2015-08-29 14:28+0100\n"
+"POT-Creation-Date: 2015-08-31 20:00+0100\n"
+"PO-Revision-Date: 2015-08-31 20:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,6 +41,7 @@ msgstr "Ein Kommentar"
 #: inc/widgets/widget-category-posts-boxed.php:314
 #: inc/widgets/widget-category-posts-columns.php:240
 #: inc/widgets/widget-category-posts-grid.php:273
+#, php-format
 msgid "% comments"
 msgstr "% Kommentare"
 
@@ -74,11 +75,11 @@ msgstr ""
 "Erscheint auf allen Beiträgen und Seiten mit Ausnahme der Magazine Homepage "
 "und Fullwidth Templates."
 
-#: functions.php:150
+#: functions.php:152
 msgid "Magazine Homepage"
 msgstr "Magazin Startseite"
 
-#: functions.php:152
+#: functions.php:154
 msgid ""
 "Appears on Magazine Homepage template only. You can use the Category Posts "
 "widgets here."
@@ -86,19 +87,19 @@ msgstr ""
 "Erscheint nur auf dem Magazine Homepage Template. Du kannst hier die "
 "Kategorie Beiträge Widgets verwenden."
 
-#: functions.php:226
+#: functions.php:233
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:227 functions.php:247
+#: functions.php:234 functions.php:254
 msgid "(Edit)"
 msgstr "(Bearbeiten)"
 
-#: functions.php:242
+#: functions.php:249
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wird überprüft."
 
-#: functions.php:246
+#: functions.php:253
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s am %2$s"
@@ -293,6 +294,10 @@ msgstr ""
 #: inc/theme-info.php:118
 msgid "rate it"
 msgstr "bewerte es"
+
+#: inc/customizer/customizer.php:37
+msgid "Background"
+msgstr "Hintergrund"
 
 #: inc/customizer/customizer.php:48
 msgid "Display Tagline below site title."
@@ -1057,9 +1062,6 @@ msgstr "Dreispaltiges Raster"
 
 #~ msgid "Post Slider Color"
 #~ msgstr "Farbe des Beitrags-Sliders"
-
-#~ msgid "Header Background Color"
-#~ msgstr "Header Hintergrundfarbe"
 
 #~ msgid "Footer Background Color"
 #~ msgstr "Footer Hintergrundfarbe"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Glades\n"
 "Report-Msgid-Bugs-To: http://themezee.com/\n"
-"POT-Creation-Date: 2015-08-29 14:27+0100\n"
-"PO-Revision-Date: 2015-08-29 14:28+0100\n"
+"POT-Creation-Date: 2015-08-31 20:00+0100\n"
+"PO-Revision-Date: 2015-08-31 20:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -77,29 +77,29 @@ msgid ""
 "Appears on posts and pages except Magazine Homepage and Fullwidth template."
 msgstr ""
 
-#: functions.php:150
+#: functions.php:152
 msgid "Magazine Homepage"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:154
 msgid ""
 "Appears on Magazine Homepage template only. You can use the Category Posts "
 "widgets here."
 msgstr ""
 
-#: functions.php:226
+#: functions.php:233
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:227 functions.php:247
+#: functions.php:234 functions.php:254
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:249
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:246
+#: functions.php:253
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
@@ -273,6 +273,10 @@ msgstr ""
 
 #: inc/theme-info.php:118
 msgid "rate it"
+msgstr ""
+
+#: inc/customizer/customizer.php:37
+msgid "Background"
 msgstr ""
 
 #: inc/customizer/customizer.php:48
