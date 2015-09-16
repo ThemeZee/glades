@@ -405,3 +405,12 @@ class Glades_Category_Posts_Boxed_Widget extends WP_Widget {
 <?php
 	}
 }
+
+// Register Widget
+add_action( 'widgets_init', 'glades_register_category_posts_boxed_widget' );
+
+function glades_register_category_posts_boxed_widget() {
+
+	register_widget('Glades_Category_Posts_Boxed_Widget');
+	
+}
