@@ -5,7 +5,6 @@
 // Load default style.css and Javascripts
 add_action('wp_enqueue_scripts', 'glades_enqueue_scripts');
 
-if ( ! function_exists( 'glades_enqueue_scripts' ) ):
 function glades_enqueue_scripts() {
 
 	// Register and Enqueue Stylesheet
@@ -17,20 +16,16 @@ function glades_enqueue_scripts() {
 	// Register and enqueue navigation.js
 	wp_enqueue_script('glades-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
 
+	// Register Comment Reply Script for Threaded Comments
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
 	// Register and Enqueue Fonts
 	wp_enqueue_style('glades-default-fonts', glades_google_fonts_url(), array(), null );
 
 }
-endif;
 
-// Load comment-reply.js if comment form is loaded and threaded comments activated
-add_action( 'comment_form_before', 'glades_enqueue_comment_reply' );
-
-function glades_enqueue_comment_reply() {
-	if( get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
 
 // Retrieve Font URL to register default Google Fonts
 function glades_google_fonts_url() {
@@ -63,7 +58,6 @@ function glades_google_fonts_url() {
 // Setup Function: Registers support for various WordPress features
 add_action( 'after_setup_theme', 'glades_setup' );
 
-if ( ! function_exists( 'glades_setup' ) ):
 function glades_setup() {
 
 	// Set Content Width
@@ -104,13 +98,11 @@ function glades_setup() {
 	register_nav_menu( 'social', __('Social Icons', 'glades') );
 
 }
-endif;
 
 
 // Add custom Image Sizes
 add_action( 'after_setup_theme', 'glades_add_image_sizes' );
 
-if ( ! function_exists( 'glades_add_image_sizes' ) ):
 function glades_add_image_sizes() {
 	
 	// Add Custom Header Image Size
@@ -127,13 +119,11 @@ function glades_add_image_sizes() {
 	add_image_size( 'glades-category-posts-widget-extra-large', 600, 350, true);
 	
 }
-endif;
 
 
 // Register Sidebars
 add_action( 'widgets_init', 'glades_register_sidebars' );
 
-if ( ! function_exists( 'glades_register_sidebars' ) ):
 function glades_register_sidebars() {
 
 	// Register Sidebar
@@ -159,7 +149,6 @@ function glades_register_sidebars() {
 	));
 
 }
-endif;
 
 
 /*==================================== INCLUDE FILES ====================================*/
