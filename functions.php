@@ -162,107 +162,6 @@ function glades_register_sidebars() {
 endif;
 
 
-// Add title tag for older WordPress versions
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-
-	add_action( 'wp_head', 'glades_wp_title' );
-	function glades_wp_title() { ?>
-		
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-
-<?php
-    }
-    
-endif;
-
-
-// Add Default Menu Fallback Function
-function glades_default_menu() {
-	echo '<ul id="mainnav-menu" class="menu">'. wp_list_pages('title_li=&echo=0') .'</ul>';
-}
-
-
-// Get Featured Posts
-function glades_get_featured_content() {
-	return apply_filters( 'glades_get_featured_content', false );
-}
-
-
-// Check if featured posts exists
-function glades_has_featured_content() {
-	return ! is_paged() && (bool) glades_get_featured_content();
-}
-
-
-// Change Excerpt Length
-add_filter('excerpt_length', 'glades_excerpt_length');
-function glades_excerpt_length($length) {
-    return 60;
-}
-
-// Category Posts Large Excerpt Length
-function glades_category_posts_large_excerpt($length) {
-    return 32;
-}
-
-// Category Posts Medium Excerpt Length
-function glades_category_posts_medium_excerpt($length) {
-    return 20;
-}
-
-// Category Posts Small Excerpt Length
-function glades_category_posts_small_excerpt($length) {
-    return 8;
-}
-
-
-// Custom Template for comments and pingbacks.
-if ( ! function_exists( 'glades_list_comments' ) ):
-function glades_list_comments($comment, $args, $depth) {
-
-	$GLOBALS['comment'] = $comment;
-
-	if( $comment->comment_type == 'pingback' or $comment->comment_type == 'trackback' ) : ?>
-
-		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-			<p><?php _e( 'Pingback:', 'glades' ); ?> <?php comment_author_link(); ?>
-			<?php edit_comment_link( __( '(Edit)', 'glades' ), '<span class="edit-link">', '</span>' ); ?>
-			</p>
-
-	<?php else : ?>
-
-		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-
-			<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-
-				<div class="comment-author vcard">
-					<?php echo get_avatar( $comment, 56 ); ?>
-					<?php printf( '<span class="fn">%s</span>', get_comment_author_link() ); ?>
-				</div>
-
-		<?php if ($comment->comment_approved == '0') : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'glades' ); ?></p>
-		<?php endif; ?>
-
-				<div class="comment-meta commentmetadata">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf(__('%1$s at %2$s', 'glades'), get_comment_date(),  get_comment_time()) ?></a>
-					<?php edit_comment_link(__('(Edit)', 'glades'),'  ','') ?>
-				</div>
-
-				<div class="comment-content"><?php comment_text(); ?></div>
-
-				<div class="reply">
-					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-				</div>
-
-			</div>
-<?php
-	endif;
-
-}
-endif;
-
-
 /*==================================== INCLUDE FILES ====================================*/
 
 // include Theme Info page
@@ -276,6 +175,9 @@ require( get_template_directory() . '/inc/customizer/default-options.php' );
 require( get_template_directory() . '/inc/customizer/frontend/custom-layout.php' );
 require( get_template_directory() . '/inc/customizer/frontend/custom-slider.php' );
 
+// Include Extra Functions
+require get_template_directory() . '/inc/extras.php';
+
 // include Template Functions
 require( get_template_directory() . '/inc/template-tags.php' );
 
@@ -286,5 +188,3 @@ require( get_template_directory() . '/inc/widgets/widget-category-posts-grid.php
 
 // Include Featured Content class
 require( get_template_directory() . '/inc/featured-content.php' );
-
-?>
