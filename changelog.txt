@@ -2,6 +2,12 @@
 Glades Changelog
 ===================================
 
+Version 1.1.1
+-----------------------------------
+[added] postmeta setting to Category Posts Boxed widget
+[added] postmeta setting to Category Posts Columns widget
+[added] postmeta setting to Category Posts Grid widget
+
 Version 1.1.0
 -----------------------------------
 [moved] additional functions from functions.php to extras.php and template-tags.php

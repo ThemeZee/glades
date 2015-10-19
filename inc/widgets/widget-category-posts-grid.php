@@ -31,7 +31,8 @@ class Glades_Category_Posts_Grid_Widget extends WP_Widget {
 			'title'				=> '',
 			'category'			=> 0,
 			'layout'			=> 'three-columns',
-			'number'			=> 6
+			'number'			=> 6,
+			'postmeta'			=> 3
 		);
 		
 		return $defaults;
@@ -152,7 +153,7 @@ class Glades_Category_Posts_Grid_Widget extends WP_Widget {
 
 							<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
-							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
+							<?php $this->display_postmeta($instance); ?>
 
 							<div class="entry">
 								<?php the_excerpt(); ?>
@@ -226,7 +227,7 @@ class Glades_Category_Posts_Grid_Widget extends WP_Widget {
 							<div class="medium-post-content">
 								
 								<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-								<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
+								<?php $this->display_postmeta($instance); ?>
 							
 							</div>
 
@@ -256,23 +257,48 @@ class Glades_Category_Posts_Grid_Widget extends WP_Widget {
 	}
 	
 	// Display Postmeta
-	function display_postmeta($instance) { ?>
-
-		<span class="meta-date">
-		<?php printf('<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s">%4$s</time></a>',
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() )
-			);
-		?>
-		</span>
-
-	<?php if ( comments_open() ) : ?>
-		<span class="meta-comments sep">
-			<?php comments_popup_link( __('Leave a comment', 'glades'),__('One comment','glades'),__('% comments','glades') ); ?>
-		</span>
-	<?php endif;
+	function display_postmeta( $instance ) {
+	
+		// Get Widget Settings
+		$defaults = $this->default_settings();
+		extract( wp_parse_args( $instance, $defaults ) );
+		
+		// Start Output Buffering
+		ob_start();
+		
+		// Display Date unless deactivated
+		if ( $postmeta > 0 ) :
+		
+			glades_meta_date();
+					
+		endif; 
+		
+		// Display Author unless deactivated
+		if ( $postmeta == 2 ) :	
+		
+			glades_meta_author();
+		
+		endif; 
+		
+		// Display Comments
+		if ( $postmeta == 3 and comments_open() ) :
+			
+			glades_meta_comments();
+			
+		endif;
+		
+		// Save Output Buffer
+		$meta_output = ob_get_contents();
+		
+		// Delete Buffer
+		ob_end_clean();
+		
+		// Only display output if there is postmeta
+		if ( $meta_output <> false ) :
+		
+			echo '<div class="postmeta">' . $meta_output . '</div>';
+		
+		endif;
 
 	}
 	
@@ -320,6 +346,7 @@ class Glades_Category_Posts_Grid_Widget extends WP_Widget {
 		$instance['category'] = (int)$new_instance['category'];
 		$instance['layout'] = esc_attr($new_instance['layout']);
 		$instance['number'] = (int)$new_instance['number'];
+		$instance['postmeta'] = (int)$new_instance['postmeta'];
 		
 		$this->delete_widget_cache();
 		
@@ -366,6 +393,16 @@ class Glades_Category_Posts_Grid_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'glades'); ?>
 				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" />
 			</label>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id( 'postmeta' ); ?>"><?php _e( 'Post Meta:', 'glades' ); ?></label><br/>
+			<select id="<?php echo $this->get_field_id( 'postmeta' ); ?>" name="<?php echo $this->get_field_name( 'postmeta' ); ?>">
+				<option value="0" <?php selected($postmeta, 0); ?>><?php _e( 'Hide post meta', 'glades' ); ?></option>
+				<option value="1" <?php selected($postmeta, 1); ?>><?php _e( 'Display post date', 'glades' ); ?></option>
+				<option value="2" <?php selected($postmeta, 2); ?>><?php _e( 'Display date and author', 'glades' ); ?></option>
+				<option value="3" <?php selected($postmeta, 3); ?>><?php _e( 'Display date and comments', 'glades' ); ?></option>
+			</select>
 		</p>
 		
 <?php
