@@ -24,7 +24,7 @@ function glades_customize_register_options( $wp_customize ) {
 		'priority'       => 180,
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
-		'title'          => __( 'Theme Options', 'glades' ),
+		'title'          => esc_html__( 'Theme Options', 'glades' ),
 		'description'    => '',
 	) );
 	
@@ -34,7 +34,7 @@ function glades_customize_register_options( $wp_customize ) {
 	
 	// Change default background section
 	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
-	$wp_customize->get_section( 'background_image'  )->title     = __( 'Background', 'glades' );
+	$wp_customize->get_section( 'background_image'  )->title     = esc_html__( 'Background', 'glades' );
 	
 	// Add Header Tagline option
 	$wp_customize->add_setting( 'glades_theme_options[header_tagline]', array(
@@ -45,7 +45,7 @@ function glades_customize_register_options( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_header_tagline', array(
-        'label'    => __( 'Display Tagline below site title.', 'glades' ),
+        'label'    => esc_html__( 'Display Tagline below site title.', 'glades' ),
         'section'  => 'title_tagline',
         'settings' => 'glades_theme_options[header_tagline]',
         'type'     => 'checkbox',

@@ -8,7 +8,7 @@
 		<?php glades_display_thumbnail_index(); ?>
 		
 		<div class="entry clearfix">
-			<?php the_content(__('Continue reading &raquo;', 'glades')); ?>
+			<?php the_content( esc_html__( 'Continue reading &raquo;', 'glades' )); ?>
 			<div class="page-links"><?php wp_link_pages(); ?></div>
 		</div>
 

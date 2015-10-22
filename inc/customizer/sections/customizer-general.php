@@ -11,7 +11,7 @@ function glades_customize_register_general_settings( $wp_customize ) {
 
 	// Add Section for Theme Options
 	$wp_customize->add_section( 'glades_section_general', array(
-        'title'    => __( 'General Settings', 'glades' ),
+        'title'    => esc_html__( 'General Settings', 'glades' ),
         'priority' => 10,
 		'panel' => 'glades_options_panel' 
 		)
@@ -26,14 +26,14 @@ function glades_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_layout', array(
-        'label'    => __( 'Theme Width', 'glades' ),
+        'label'    => esc_html__( 'Theme Width', 'glades' ),
         'section'  => 'glades_section_general',
         'settings' => 'glades_theme_options[layout]',
         'type'     => 'radio',
 		'priority' => 1,
         'choices'  => array(
-            'wide' => __( 'Wide Layout (Fullwidth)', 'glades' ),
-			'boxed' => __( 'Boxed Layout', 'glades' )
+            'wide' => esc_html__( 'Wide Layout (Fullwidth)', 'glades' ),
+			'boxed' => esc_html__( 'Boxed Layout', 'glades' )
 			)
 		)
 	);
@@ -47,14 +47,14 @@ function glades_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_sidebar', array(
-        'label'    => __( 'Theme Layout', 'glades' ),
+        'label'    => esc_html__( 'Theme Layout', 'glades' ),
         'section'  => 'glades_section_general',
         'settings' => 'glades_theme_options[sidebar]',
         'type'     => 'radio',
 		'priority' => 2,
         'choices'  => array(
-            'left-sidebar' => __( 'Left Sidebar', 'glades' ),
-            'right-sidebar' => __( 'Right Sidebar', 'glades')
+            'left-sidebar' => esc_html__( 'Left Sidebar', 'glades' ),
+            'right-sidebar' => esc_html__( 'Right Sidebar', 'glades' )
 			)
 		)
 	);
@@ -68,7 +68,7 @@ function glades_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_footer_text', array(
-        'label'    => __( 'Footer Text', 'glades' ),
+        'label'    => esc_html__( 'Footer Text', 'glades' ),
         'section'  => 'glades_section_general',
         'settings' => 'glades_theme_options[footer_text]',
         'type'     => 'textarea',
@@ -86,7 +86,7 @@ function glades_customize_register_general_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Glades_Customize_Header_Control(
         $wp_customize, 'glades_control_default_fonts', array(
-            'label' => __( 'Default Fonts', 'glades' ),
+            'label' => esc_html__( 'Default Fonts', 'glades' ),
             'section' => 'glades_section_general',
             'settings' => 'glades_theme_options[default_fonts]',
             'priority' => 5
@@ -103,7 +103,7 @@ function glades_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_deactivate_google_fonts', array(
-        'label'    => __( 'Deactivate Google Fonts in case your language is not compatible.', 'glades' ),
+        'label'    => esc_html__( 'Deactivate Google Fonts in case your language is not compatible.', 'glades' ),
         'section'  => 'glades_section_general',
         'settings' => 'glades_theme_options[deactivate_google_fonts]',
         'type'     => 'checkbox',

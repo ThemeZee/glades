@@ -8,9 +8,9 @@ class Glades_Category_Posts_Boxed_Widget extends WP_Widget {
 		// Setup Widget
 		$widget_ops = array(
 			'classname' => 'glades_category_posts_boxed', 
-			'description' => __('Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'glades')
+			'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'glades' )
 		);
-		parent::__construct('glades_category_posts_boxed', sprintf( __('Category Posts: Boxed (%s)', 'glades'), wp_get_theme()->Name ), $widget_ops);
+		parent::__construct('glades_category_posts_boxed', sprintf( esc_html__( 'Category Posts: Boxed (%s)', 'glades' ), wp_get_theme()->Name ), $widget_ops);
 		
 		// Delete Widget Cache on certain actions
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
@@ -164,7 +164,7 @@ class Glades_Category_Posts_Boxed_Widget extends WP_Widget {
 
 							<div class="entry">
 								<?php the_excerpt(); ?>
-								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'glades'); ?></a>
+								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php esc_html_e( 'Continue reading &raquo;', 'glades' ); ?></a>
 							</div>
 							
 						</div>
@@ -251,7 +251,7 @@ class Glades_Category_Posts_Boxed_Widget extends WP_Widget {
 
 							<div class="entry">
 								<?php the_excerpt(); ?>
-								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Continue reading &raquo;', 'glades'); ?></a>
+								<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php esc_html_e( 'Continue reading &raquo;', 'glades' ); ?></a>
 							</div>
 							
 						</div>
@@ -367,7 +367,7 @@ class Glades_Category_Posts_Boxed_Widget extends WP_Widget {
 
 			else:
 			
-				$link_title = sprintf( __('View all posts from category %s', 'glades'), get_cat_name( $category ) );
+				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'glades' ), get_cat_name( $category ) );
 				$link_url = esc_url( get_category_link( $category ) );
 				
 				echo '<a href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a>';
@@ -401,16 +401,16 @@ class Glades_Category_Posts_Boxed_Widget extends WP_Widget {
 
 ?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'glades'); ?>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e( 'Title:', 'glades' ); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 			</label>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('category'); ?>"><?php _e('Category:', 'glades'); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('category'); ?>"><?php esc_html_e( 'Category:', 'glades' ); ?></label><br/>
 			<?php // Display Category Select
 				$args = array(
-					'show_option_all'    => __('All Categories', 'glades'),
+					'show_option_all'    => esc_html__( 'All Categories', 'glades' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $category,
@@ -422,20 +422,20 @@ class Glades_Category_Posts_Boxed_Widget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php _e('Post Layout:', 'glades'); ?></label><br/>
+			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php esc_html_e( 'Post Layout:', 'glades' ); ?></label><br/>
 			<select id="<?php echo $this->get_field_id('layout'); ?>" name="<?php echo $this->get_field_name('layout'); ?>">
-				<option <?php selected( $layout, 'horizontal' ); ?> value="horizontal" ><?php _e('Horizontal Arrangement', 'glades'); ?></option>
-				<option <?php selected( $layout, 'vertical' ); ?> value="vertical" ><?php _e('Vertical Arrangement', 'glades'); ?></option>
+				<option <?php selected( $layout, 'horizontal' ); ?> value="horizontal" ><?php esc_html_e( 'Horizontal Arrangement', 'glades' ); ?></option>
+				<option <?php selected( $layout, 'vertical' ); ?> value="vertical" ><?php esc_html_e( 'Vertical Arrangement', 'glades' ); ?></option>
 			</select>
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'postmeta' ); ?>"><?php _e( 'Post Meta:', 'glades' ); ?></label><br/>
+			<label for="<?php echo $this->get_field_id( 'postmeta' ); ?>"><?php esc_html_e( 'Post Meta:', 'glades' ); ?></label><br/>
 			<select id="<?php echo $this->get_field_id( 'postmeta' ); ?>" name="<?php echo $this->get_field_name( 'postmeta' ); ?>">
-				<option value="0" <?php selected($postmeta, 0); ?>><?php _e( 'Hide post meta', 'glades' ); ?></option>
-				<option value="1" <?php selected($postmeta, 1); ?>><?php _e( 'Display post date', 'glades' ); ?></option>
-				<option value="2" <?php selected($postmeta, 2); ?>><?php _e( 'Display date and author', 'glades' ); ?></option>
-				<option value="3" <?php selected($postmeta, 3); ?>><?php _e( 'Display date and comments', 'glades' ); ?></option>
+				<option value="0" <?php selected($postmeta, 0); ?>><?php esc_html_e( 'Hide post meta', 'glades' ); ?></option>
+				<option value="1" <?php selected($postmeta, 1); ?>><?php esc_html_e( 'Display post date', 'glades' ); ?></option>
+				<option value="2" <?php selected($postmeta, 2); ?>><?php esc_html_e( 'Display date and author', 'glades' ); ?></option>
+				<option value="3" <?php selected($postmeta, 3); ?>><?php esc_html_e( 'Display date and comments', 'glades' ); ?></option>
 			</select>
 		</p>
 		

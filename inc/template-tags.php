@@ -97,35 +97,30 @@ endif;
 
 
 // Display Post Date
-function glades_meta_date() { ?>		
-		
-	<span class="meta-date">
-	<?php printf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>', 
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() )
-		);
-	?>
-	</span>
+function glades_meta_date() {
 	
-<?php
+	$time_string = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>',
+		esc_url( get_permalink() ),
+		esc_attr( get_the_time() ),
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
+
+	echo '<span class="meta-date">' . $time_string . '</span>';
 }
 
 
 // Display Post Author
-function glades_meta_author() { ?>		
-		
-	<span class="meta-author author vcard">
-	<?php printf( '<a class="fn" href="%1$s" title="%2$s" rel="author">%3$s</a>', 
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'glades' ), get_the_author() ) ),
-			get_the_author()
-		);
-	?>
-	</span>
-			
-<?php
+function glades_meta_author() {  
+	
+	$author_string = sprintf( '<a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a>', 
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_attr( sprintf( esc_html__( 'View all posts by %s', 'glades' ), get_the_author() ) ),
+		esc_html( get_the_author() )
+	);
+	
+	echo '<span class="meta-author author vcard"> ' . $author_string . '</span>';
+
 }
 
 
@@ -144,7 +139,7 @@ function glades_meta_categories() { ?>
 function glades_meta_comments() { ?>		
 		
 	<span class="meta-comments">
-		<?php comments_popup_link( __('Leave a comment', 'glades'),__('One comment','glades'),__('% comments','glades') ); ?>
+		<?php comments_popup_link( esc_html__( 'Leave a comment', 'glades' ), esc_html__( 'One comment', 'glades' ), esc_html__( '% comments', 'glades' ) ); ?>
 	</span>
 			
 <?php
@@ -271,7 +266,7 @@ add_action( 'glades_credit_link', 'glades_display_credit_link' );
 
 function glades_display_credit_link() { 
 		
-	printf( __( 'Powered by %1$s and %2$s.', 'glades' ), 
+	printf( esc_html__( 'Powered by %1$s and %2$s.', 'glades' ), 
 		'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
 		'<a href="http://themezee.com/themes/glades/" title="Glades WordPress Theme">Glades</a>'
 	); 
@@ -302,7 +297,7 @@ function glades_display_social_icons() {
 	else: // Display Hint how to configure Social Icons ?>
 
 		<p class="social-icons-hint">
-			<?php _e('Please go to Appearance &#8594; Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" location.', 'glades'); ?>
+			<?php esc_html_e( 'Please go to Appearance &#8594; Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" location.', 'glades' ); ?>
 		</p>
 <?php
 	endif;
@@ -319,8 +314,8 @@ function glades_list_comments($comment, $args, $depth) {
 	if( $comment->comment_type == 'pingback' or $comment->comment_type == 'trackback' ) : ?>
 
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-			<p><?php _e( 'Pingback:', 'glades' ); ?> <?php comment_author_link(); ?>
-			<?php edit_comment_link( __( '(Edit)', 'glades' ), '<span class="edit-link">', '</span>' ); ?>
+			<p><?php esc_html_e( 'Pingback:', 'glades' ); ?> <?php comment_author_link(); ?>
+			<?php edit_comment_link( esc_html__( '(Edit)', 'glades' ), '<span class="edit-link">', '</span>' ); ?>
 			</p>
 
 	<?php else : ?>
@@ -335,12 +330,12 @@ function glades_list_comments($comment, $args, $depth) {
 				</div>
 
 		<?php if ($comment->comment_approved == '0') : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'glades' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'glades' ); ?></p>
 		<?php endif; ?>
 
 				<div class="comment-meta commentmetadata">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf(__('%1$s at %2$s', 'glades'), get_comment_date(),  get_comment_time()) ?></a>
-					<?php edit_comment_link(__('(Edit)', 'glades'),'  ','') ?>
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( esc_html__( '%1$s at %2$s', 'glades' ), get_comment_date(),  get_comment_time()) ?></a>
+					<?php edit_comment_link( esc_html__( '(Edit)', 'glades' ),'  ','') ?>
 				</div>
 
 				<div class="comment-content"><?php comment_text(); ?></div>

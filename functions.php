@@ -88,11 +88,11 @@ function glades_setup() {
 		'flex-height' => true));
 
 	// Register Navigation Menus
-	register_nav_menu( 'primary', __('Main Navigation', 'glades') );
-	register_nav_menu( 'secondary', __('Top Navigation', 'glades') );
+	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'glades' ) );
+	register_nav_menu( 'secondary', esc_html__( 'Top Navigation', 'glades' ) );
 	
 	// Register Social Icons Menu
-	register_nav_menu( 'social', __('Social Icons', 'glades') );
+	register_nav_menu( 'social', esc_html__( 'Social Icons', 'glades' ) );
 
 }
 
@@ -125,9 +125,9 @@ function glades_register_sidebars() {
 
 	// Register Sidebar
 	register_sidebar( array(
-		'name' => __( 'Sidebar', 'glades' ),
+		'name' => esc_html__( 'Sidebar', 'glades' ),
 		'id' => 'sidebar',
-		'description' => __( 'Appears on posts and pages except Magazine Homepage and Fullwidth template.', 'glades' ),
+		'description' => esc_html__( 'Appears on posts and pages except Magazine Homepage and Fullwidth template.', 'glades' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widgettitle"><span>',
@@ -136,9 +136,9 @@ function glades_register_sidebars() {
 	
 	// Register Magazine Homepage
 	register_sidebar( array(
-		'name' => __( 'Magazine Homepage', 'glades' ),
+		'name' => esc_html__( 'Magazine Homepage', 'glades' ),
 		'id' => 'magazine-homepage',
-		'description' => __( 'Appears on Magazine Homepage template only. You can use the Category Posts widgets here.', 'glades' ),
+		'description' => esc_html__( 'Appears on Magazine Homepage template only. You can use the Category Posts widgets here.', 'glades' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgettitle"><span>',

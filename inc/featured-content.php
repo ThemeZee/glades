@@ -345,8 +345,8 @@ class Glades_Featured_Content {
 	 */
 	public static function customize_register( $wp_customize ) {
 		$wp_customize->add_section( 'glades_featured_content', array(
-			'title'          => __( 'Featured Content', 'glades' ),
-			'description'    => sprintf( __( 'Easily feature all posts with the <a href="%1$s">"featured" tag</a> or a tag of your choice. Your theme supports up to %2$s posts in its featured content area.', 'glades' ), admin_url( '/edit.php?tag=featured' ), absint( self::$max_posts ) ),
+			'title'          => esc_html__( 'Featured Content', 'glades' ),
+			'description'    => sprintf( esc_html__( 'Easily feature all posts with the <a href="%1$s">"featured" tag</a> or a tag of your choice. Your theme supports up to %2$s posts in its featured content area.', 'glades' ), admin_url( '/edit.php?tag=featured' ), absint( self::$max_posts ) ),
 			'priority'       => 40,
 			'panel'			 => 'glades_options_panel'
 		) );
@@ -373,18 +373,18 @@ class Glades_Featured_Content {
 
 		// Add Featured Content controls.
 		$wp_customize->add_control( 'featured-content[tag-name]', array(
-			'label'          => __( 'Tag name', 'glades' ),
+			'label'          => esc_html__( 'Tag name', 'glades' ),
 			'section'        => 'glades_featured_content',
 			'priority'       => 20,
 		) );
 		$wp_customize->add_control( 'featured-content[hide-tag]', array(
-			'label'          => __( 'Hide tag from displaying in post meta and tag clouds.', 'glades' ),
+			'label'          => esc_html__( 'Hide tag from displaying in post meta and tag clouds.', 'glades' ),
 			'section'        => 'glades_featured_content',
 			'type'           => 'checkbox',
 			'priority'       => 30,
 		) );
 		$wp_customize->add_control( 'featured-content[show-all]', array(
-			'label'          => __( 'Display featured posts in latest blog post listing.', 'glades' ),
+			'label'          => esc_html__( 'Display featured posts in latest blog post listing.', 'glades' ),
 			'section'        => 'glades_featured_content',
 			'type'           => 'checkbox',
 			'priority'       => 40,

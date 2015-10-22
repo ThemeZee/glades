@@ -11,7 +11,7 @@ function glades_customize_register_post_settings( $wp_customize ) {
 
 	// Add Sections for Post Settings
 	$wp_customize->add_section( 'glades_section_post', array(
-        'title'    => __( 'Post Settings', 'glades' ),
+        'title'    => esc_html__( 'Post Settings', 'glades' ),
         'priority' => 30,
 		'panel' => 'glades_options_panel' 
 		)
@@ -26,14 +26,14 @@ function glades_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_posts_length', array(
-        'label'    => __( 'Post length on archives', 'glades' ),
+        'label'    => esc_html__( 'Post length on archives', 'glades' ),
         'section'  => 'glades_section_post',
         'settings' => 'glades_theme_options[posts_length]',
         'type'     => 'radio',
 		'priority' => 1,
         'choices'  => array(
-            'index' => __( 'Show full posts', 'glades' ),
-            'excerpt' => __( 'Show post excerpts', 'glades' )
+            'index' => esc_html__( 'Show full posts', 'glades' ),
+            'excerpt' => esc_html__( 'Show post excerpts', 'glades' )
 			)
 		)
 	);
@@ -48,7 +48,7 @@ function glades_customize_register_post_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Glades_Customize_Header_Control(
         $wp_customize, 'glades_control_post_images', array(
-            'label' => __( 'Post Images', 'glades' ),
+            'label' => esc_html__( 'Post Images', 'glades' ),
             'section' => 'glades_section_post',
             'settings' => 'glades_theme_options[post_images]',
             'priority' => 	2
@@ -63,7 +63,7 @@ function glades_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_posts_thumbnails_index', array(
-        'label'    => __( 'Display featured images on archive pages', 'glades' ),
+        'label'    => esc_html__( 'Display featured images on archive pages', 'glades' ),
         'section'  => 'glades_section_post',
         'settings' => 'glades_theme_options[post_thumbnails_index]',
         'type'     => 'checkbox',
@@ -79,7 +79,7 @@ function glades_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_posts_thumbnails_single', array(
-        'label'    => __( 'Display featured images on single posts', 'glades' ),
+        'label'    => esc_html__( 'Display featured images on single posts', 'glades' ),
         'section'  => 'glades_section_post',
         'settings' => 'glades_theme_options[post_thumbnails_single]',
         'type'     => 'checkbox',
@@ -97,7 +97,7 @@ function glades_customize_register_post_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Glades_Customize_Header_Control(
         $wp_customize, 'glades_control_postmeta_headline', array(
-            'label' => __( 'Post Meta', 'glades' ),
+            'label' => esc_html__( 'Post Meta', 'glades' ),
             'section' => 'glades_section_post',
             'settings' => 'glades_theme_options[postmeta_headline]',
             'priority' => 5
@@ -112,7 +112,7 @@ function glades_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_meta_date', array(
-        'label'    => __( 'Display post date', 'glades' ),
+        'label'    => esc_html__( 'Display post date', 'glades' ),
         'section'  => 'glades_section_post',
         'settings' => 'glades_theme_options[meta_date]',
         'type'     => 'checkbox',
@@ -127,7 +127,7 @@ function glades_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_meta_author', array(
-        'label'    => __( 'Display post author', 'glades' ),
+        'label'    => esc_html__( 'Display post author', 'glades' ),
         'section'  => 'glades_section_post',
         'settings' => 'glades_theme_options[meta_author]',
         'type'     => 'checkbox',
@@ -142,7 +142,7 @@ function glades_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_meta_category', array(
-        'label'    => __( 'Display post categories', 'glades' ),
+        'label'    => esc_html__( 'Display post categories', 'glades' ),
         'section'  => 'glades_section_post',
         'settings' => 'glades_theme_options[meta_category]',
         'type'     => 'checkbox',
@@ -157,7 +157,7 @@ function glades_customize_register_post_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'glades_control_meta_tags', array(
-        'label'    => __( 'Display post tags', 'glades' ),
+        'label'    => esc_html__( 'Display post tags', 'glades' ),
         'section'  => 'glades_section_post',
         'settings' => 'glades_theme_options[meta_tags]',
         'type'     => 'checkbox',
