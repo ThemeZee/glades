@@ -1385,6 +1385,10 @@ embed, iframe, object, video {
 	position: relative;
 	margin: 0 0 1.3em 0;
 }
+#featured-content .sticky {
+	border-left: none;
+	padding-left: 0;
+}
 #featured-content .type-post .wp-post-image {
 	margin: 0;
 	vertical-align: top;

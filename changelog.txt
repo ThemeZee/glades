@@ -4,6 +4,7 @@ Glades Changelog
 
 Version 1.1.3
 -----------------------------------
+[added] default featured images for featured content posts
 [changed] all h2 post and page titles to h1 for better SEO
 [fixed] postmeta styling for widget bundle
 

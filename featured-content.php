@@ -26,9 +26,18 @@ $loop_count = 1;
 				
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						
-						<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
-							<?php the_post_thumbnail('glades-featured-content-left'); ?>
-						</a>
+						<?php // Display Post Thumbnail or default thumbnail
+						if( has_post_thumbnail() ) : ?>
+						
+							<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
+								<?php the_post_thumbnail('glades-featured-content-left'); ?>
+							</a>
+							
+						<?php else: ?>
+
+							<img src="<?php echo get_template_directory_uri(); ?>/images/default-featured-content.png" class="default-featured-image wp-post-image" />
+
+						<?php endif; ?>
 						
 						<div class="post-content">
 
@@ -53,9 +62,18 @@ $loop_count = 1;
 				
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						
-						<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
-							<?php the_post_thumbnail('glades-featured-content-right'); ?>
-						</a>
+						<?php // Display Post Thumbnail or default thumbnail
+						if( has_post_thumbnail() ) : ?>
+						
+							<a href="<?php esc_url(the_permalink()) ?>" rel="bookmark">
+								<?php the_post_thumbnail('glades-featured-content-right'); ?>
+							</a>
+							
+						<?php else: ?>
+
+							<img src="<?php echo get_template_directory_uri(); ?>/images/default-featured-content-small.png" class="default-featured-image wp-post-image" />
+
+						<?php endif; ?>
 						
 						<div class="post-content">
 
