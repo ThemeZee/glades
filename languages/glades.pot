@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Glades\n"
 "Report-Msgid-Bugs-To: http://themezee.com/\n"
-"POT-Creation-Date: 2015-08-31 20:00+0100\n"
-"PO-Revision-Date: 2015-08-31 20:00+0100\n"
+"POT-Creation-Date: 2015-11-12 09:58+0100\n"
+"PO-Revision-Date: 2015-11-12 09:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -34,74 +34,51 @@ msgstr ""
 msgid "Enter password to view comments."
 msgstr ""
 
-#: comments.php:20 inc/template-tags.php:108
-#: inc/widgets/widget-category-posts-boxed.php:314
-#: inc/widgets/widget-category-posts-columns.php:240
-#: inc/widgets/widget-category-posts-grid.php:273
+#: comments.php:20 inc/template-tags.php:142
 msgid "One comment"
 msgstr ""
 
-#: comments.php:20 inc/template-tags.php:108
-#: inc/widgets/widget-category-posts-boxed.php:314
-#: inc/widgets/widget-category-posts-columns.php:240
-#: inc/widgets/widget-category-posts-grid.php:273
+#: comments.php:20 inc/template-tags.php:142
 #, php-format
 msgid "% comments"
 msgstr ""
 
 #: content-excerpt.php:12 content-search.php:8 content.php:11
-#: inc/widgets/widget-category-posts-boxed.php:166
-#: inc/widgets/widget-category-posts-boxed.php:253
-#: inc/widgets/widget-category-posts-columns.php:180
+#: inc/widgets/widget-category-posts-boxed.php:167
+#: inc/widgets/widget-category-posts-boxed.php:255
+#: inc/widgets/widget-category-posts-columns.php:181
 msgid "Continue reading &raquo;"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:91
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:92
 msgid "Top Navigation"
 msgstr ""
 
-#: functions.php:104
+#: functions.php:95
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:141 sidebar.php:14
+#: functions.php:128 sidebar.php:14
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:130
 msgid ""
 "Appears on posts and pages except Magazine Homepage and Fullwidth template."
 msgstr ""
 
-#: functions.php:152
+#: functions.php:139
 msgid "Magazine Homepage"
 msgstr ""
 
-#: functions.php:154
+#: functions.php:141
 msgid ""
 "Appears on Magazine Homepage template only. You can use the Category Posts "
 "widgets here."
-msgstr ""
-
-#: functions.php:233
-msgid "Pingback:"
-msgstr ""
-
-#: functions.php:234 functions.php:254
-msgid "(Edit)"
-msgstr ""
-
-#: functions.php:249
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: functions.php:253
-#, php-format
-msgid "%1$s at %2$s"
 msgstr ""
 
 #: search.php:13
@@ -164,27 +141,42 @@ msgstr ""
 msgid "Display featured posts in latest blog post listing."
 msgstr ""
 
-#: inc/template-tags.php:87
+#: inc/template-tags.php:118
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:108 inc/widgets/widget-category-posts-boxed.php:314
-#: inc/widgets/widget-category-posts-columns.php:240
-#: inc/widgets/widget-category-posts-grid.php:273
+#: inc/template-tags.php:142
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:238
+#: inc/template-tags.php:269
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
 
-#: inc/template-tags.php:269
+#: inc/template-tags.php:300
 msgid ""
 "Please go to Appearance &#8594; Menus and create a new custom menu with "
 "custom links to all your social networks. Then click on \"Manage Locations\" "
 "tab and assign your created menu to the \"Social Icons\" location."
+msgstr ""
+
+#: inc/template-tags.php:317
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:318 inc/template-tags.php:338
+msgid "(Edit)"
+msgstr ""
+
+#: inc/template-tags.php:333
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:337
+#, php-format
+msgid "%1$s at %2$s"
 msgstr ""
 
 #: inc/theme-info.php:18 inc/theme-info.php:38
@@ -368,6 +360,9 @@ msgid "Post Meta"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:115
+#: inc/widgets/widget-category-posts-boxed.php:438
+#: inc/widgets/widget-category-posts-columns.php:392
+#: inc/widgets/widget-category-posts-grid.php:403
 msgid "Display post date"
 msgstr ""
 
@@ -404,40 +399,64 @@ msgstr ""
 msgid "Category Posts: Boxed (%s)"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:344
-#: inc/widgets/widget-category-posts-columns.php:270
-#: inc/widgets/widget-category-posts-grid.php:303
+#: inc/widgets/widget-category-posts-boxed.php:372
+#: inc/widgets/widget-category-posts-columns.php:297
+#: inc/widgets/widget-category-posts-grid.php:330
 #, php-format
 msgid "View all posts from category %s"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:377
-#: inc/widgets/widget-category-posts-grid.php:337
+#: inc/widgets/widget-category-posts-boxed.php:406
+#: inc/widgets/widget-category-posts-grid.php:365
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:383
-#: inc/widgets/widget-category-posts-grid.php:343
+#: inc/widgets/widget-category-posts-boxed.php:412
+#: inc/widgets/widget-category-posts-grid.php:371
 msgid "Category:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:386
-#: inc/widgets/widget-category-posts-columns.php:315
-#: inc/widgets/widget-category-posts-columns.php:336
-#: inc/widgets/widget-category-posts-grid.php:346
+#: inc/widgets/widget-category-posts-boxed.php:415
+#: inc/widgets/widget-category-posts-columns.php:343
+#: inc/widgets/widget-category-posts-columns.php:364
+#: inc/widgets/widget-category-posts-grid.php:374
 msgid "All Categories"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:398
+#: inc/widgets/widget-category-posts-boxed.php:427
 msgid "Post Layout:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:400
+#: inc/widgets/widget-category-posts-boxed.php:429
 msgid "Horizontal Arrangement"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-boxed.php:401
+#: inc/widgets/widget-category-posts-boxed.php:430
 msgid "Vertical Arrangement"
+msgstr ""
+
+#: inc/widgets/widget-category-posts-boxed.php:435
+#: inc/widgets/widget-category-posts-columns.php:389
+#: inc/widgets/widget-category-posts-grid.php:400
+msgid "Post Meta:"
+msgstr ""
+
+#: inc/widgets/widget-category-posts-boxed.php:437
+#: inc/widgets/widget-category-posts-columns.php:391
+#: inc/widgets/widget-category-posts-grid.php:402
+msgid "Hide post meta"
+msgstr ""
+
+#: inc/widgets/widget-category-posts-boxed.php:439
+#: inc/widgets/widget-category-posts-columns.php:393
+#: inc/widgets/widget-category-posts-grid.php:404
+msgid "Display date and author"
+msgstr ""
+
+#: inc/widgets/widget-category-posts-boxed.php:440
+#: inc/widgets/widget-category-posts-columns.php:394
+#: inc/widgets/widget-category-posts-grid.php:405
+msgid "Display date and comments"
 msgstr ""
 
 #: inc/widgets/widget-category-posts-columns.php:11
@@ -451,28 +470,28 @@ msgstr ""
 msgid "Category Posts: 2 Columns (%s)"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:306
+#: inc/widgets/widget-category-posts-columns.php:334
 msgid "Left Category Title:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:312
+#: inc/widgets/widget-category-posts-columns.php:340
 msgid "Left Category:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:327
+#: inc/widgets/widget-category-posts-columns.php:355
 msgid "Right Category Title:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:333
+#: inc/widgets/widget-category-posts-columns.php:361
 msgid "Right Category:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:348
-#: inc/widgets/widget-category-posts-grid.php:366
+#: inc/widgets/widget-category-posts-columns.php:376
+#: inc/widgets/widget-category-posts-grid.php:394
 msgid "Number of posts:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-columns.php:356
+#: inc/widgets/widget-category-posts-columns.php:384
 msgid "Highlight first post (big image + excerpt)"
 msgstr ""
 
@@ -487,14 +506,14 @@ msgstr ""
 msgid "Category Posts: Grid (%s)"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-grid.php:358
+#: inc/widgets/widget-category-posts-grid.php:386
 msgid "Grid Layout:"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-grid.php:360
+#: inc/widgets/widget-category-posts-grid.php:388
 msgid "Two Columns Grid"
 msgstr ""
 
-#: inc/widgets/widget-category-posts-grid.php:361
+#: inc/widgets/widget-category-posts-grid.php:389
 msgid "Three Columns Grid"
 msgstr ""

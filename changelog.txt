@@ -2,6 +2,11 @@
 Glades Changelog
 ===================================
 
+Version 1.1.4
+-----------------------------------
+[fixed] styling of 404 template
+[updated] language files for French
+
 Version 1.1.3
 -----------------------------------
 [added] default featured images for featured content posts
