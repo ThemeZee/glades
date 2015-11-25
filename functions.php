@@ -86,7 +86,10 @@ function glades_setup() {
 		'width'	=> 2500,
 		'height' => 200,
 		'flex-height' => true));
-
+	
+	// Add Theme Support for wooCommerce
+	add_theme_support( 'woocommerce' );
+	
 	// Register Navigation Menus
 	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'glades' ) );
 	register_nav_menu( 'secondary', esc_html__( 'Top Navigation', 'glades' ) );
