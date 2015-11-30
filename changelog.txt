@@ -5,6 +5,7 @@ Glades Changelog
 Version 1.1.4
 -----------------------------------
 [added] basic support for wooCommerce
+[added] support for ThemeZee Breadcrumbs plugin
 [added] email icon to social menu
 [fixed] styling of 404 template
 [updated] language files for French

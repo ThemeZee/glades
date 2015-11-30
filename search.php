@@ -8,6 +8,8 @@
 		
 		<section id="content" class="primary" role="main">
 		
+			<?php if ( function_exists( 'themezee_breadcrumbs' ) ) themezee_breadcrumbs(); ?>
+			
 			<header class="page-header">
 				<h2 id="search-title" class="archive-title">
 					<?php printf( esc_html__( 'Search Results for: %s', 'glades' ), '<span>' . get_search_query() . '</span>' ); ?>
@@ -34,7 +36,7 @@
 
 			<div class="type-page">
 				
-				<h2 class="page-title entry-title"><?php esc_html_e( 'No matches', 'glades' ); ?></h2>
+				<h2 class="page-title"><?php esc_html_e( 'No matches', 'glades' ); ?></h2>
 				
 				<div class="entry clearfix">
 					
