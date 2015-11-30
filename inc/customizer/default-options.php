@@ -30,10 +30,12 @@ function glades_theme_options() {
 function glades_default_options() {
 
 	$default_options = array(
+		'header_tagline'					=> false,
+		'custom_header_link'				=> '',
+		'custom_header_hide'				=> false,
 		'layout' 							=> 'wide',
 		'sidebar' 							=> 'right-sidebar',
 		'deactivate_google_fonts'			=> false,
-		'header_tagline' 					=> false,
 		'header_icons' 						=> false,
 		'posts_length' 						=> 'excerpt',
 		'post_thumbnails_index'				=> true,
