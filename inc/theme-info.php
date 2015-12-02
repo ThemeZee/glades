@@ -41,7 +41,7 @@ function glades_display_theme_info_page() {
 		
 		<hr>
 		<div class="important-links clearfix">
-			<p><strong><?php esc_html_e( 'Important Links:', 'glades' ); ?></strong>
+			<p><strong><?php esc_html_e( 'Theme Links:', 'glades' ); ?></strong>
 				<a href="http://themezee.com/themes/glades/" target="_blank"><?php esc_html_e( 'Theme Page', 'glades' ); ?></a>
 				<a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php esc_html_e( 'Changelog', 'glades' ); ?></a>
 				<a href="http://preview.themezee.com/glades/" target="_blank"><?php esc_html_e( 'Theme Demo', 'glades' ); ?></a>
