@@ -17,3 +17,10 @@
 #customize-control-glades_control_footer_text textarea {
 	height: 4em;
 }
+
+#customize-control-glades_control_upgrade div {
+	margin: 4px 0 32px;
+}
+#customize-control-glades_control_upgrade div .customize-control-title {
+	margin-bottom: 4px;
+}
