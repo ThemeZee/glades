@@ -339,7 +339,7 @@ class Glades_Category_Posts_Boxed_Widget extends WP_Widget {
 		// Only display output if there is postmeta
 		if ( $meta_output <> false ) :
 		
-			echo '<div class="postmeta">' . $meta_output . '</div>';
+			echo '<div class="entry-meta postmeta">' . $meta_output . '</div>';
 		
 		endif;
 

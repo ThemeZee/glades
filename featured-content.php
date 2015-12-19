@@ -43,7 +43,7 @@ $loop_count = 1;
 
 							<?php the_title( sprintf( '<h1 class="entry-title post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 							
-							<div class="postmeta clearfix"><?php glades_display_postmeta(); ?></div>
+							<div class="entry-meta postmeta clearfix"><?php glades_display_postmeta(); ?></div>
 					
 						</div>
 
