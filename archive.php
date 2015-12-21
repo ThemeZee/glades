@@ -14,7 +14,10 @@
 				<?php the_archive_title( '<h2 class="archive-title">', '</h2>' ); ?>
 			</header>
 			
-			<?php if (have_posts()) : while (have_posts()) : the_post();
+			<?php 
+			the_archive_description( '<div class="archive-description">', '</div>' );
+			
+			if (have_posts()) : while (have_posts()) : the_post();
 			
 				get_template_part( 'content', $theme_options['posts_length'] );
 			
