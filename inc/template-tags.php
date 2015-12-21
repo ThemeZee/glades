@@ -226,6 +226,25 @@ if ( ! function_exists( 'glades_display_postinfo' ) ):
 	
 endif;
 
+
+// Display Glades plugin
+if ( ! function_exists( 'glades_display_related_posts' ) ):
+	
+	function glades_display_related_posts() { 
+		
+		if ( function_exists( 'themezee_related_posts' ) ) {
+
+			themezee_related_posts( array( 
+				'class' => 'related-posts type-page clearfix',
+				'before_title' => '<header class="page-header"><h2 class="related-posts-title archive-title">',
+				'after_title' => '</h2></header>'
+			) );
+			
+		}
+	}
+	
+endif;
+
 	
 // Display Content Pagination
 if ( ! function_exists( 'glades_display_pagination' ) ):
