@@ -14,6 +14,8 @@
 		
 		endif; ?>
 			
+		<?php glades_display_post_navigation(); ?>
+			
 		<?php glades_display_related_posts(); ?>
 		
 		<?php comments_template(); ?>

@@ -227,7 +227,25 @@ if ( ! function_exists( 'glades_display_postinfo' ) ):
 endif;
 
 
-// Display Glades plugin
+// Display Single Post Navigation
+if ( ! function_exists( 'glades_display_post_navigation' ) ):
+	
+	function glades_display_post_navigation() { 
+		
+		// Get Theme Options from Database
+		$theme_options = glades_theme_options();
+		
+		if ( true == $theme_options['post_navigation'] ) {
+
+			the_post_navigation( array( 'prev_text' => '&laquo; %title', 'next_text' => '%title &raquo;' ) );
+			
+		}
+	}
+	
+endif;
+
+
+// Display ThemeZee Related Posts plugin
 if ( ! function_exists( 'glades_display_related_posts' ) ):
 	
 	function glades_display_related_posts() { 

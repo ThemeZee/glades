@@ -3,14 +3,21 @@
  *
  */
 
-#customize-control-glades_control_default_fonts,
-#customize-control-glades_control_postmeta_headline {
-	margin-top: 12px;
+.customize-control-checkbox {
+    margin-bottom: 4px;
 }
+
+#customize-control-glades_control_default_fonts,
+#customize-control-glades_control_postmeta_headline,
+#customize-control-glades_control_post_footer_headline {
+	margin-top: 16px;
+}
+
 #customize-control-glades_control_default_fonts,
 #customize-control-glades_control_header_content,
 #customize-control-glades_control_post_images,
-#customize-control-glades_control_postmeta_headline {
+#customize-control-glades_control_postmeta_headline,
+#customize-control-glades_control_post_footer_headline {
 	margin-bottom: 0;
 }
 
