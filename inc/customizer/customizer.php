@@ -108,9 +108,9 @@ function glades_customize_controls_js() {
 	// Localize the script
 	wp_localize_script( 'glades-customizer-controls', 'glades_theme_links', array(
 		'title'	=> esc_html__( 'Theme Links', 'glades' ),
-		'themeURL'	=> esc_url( 'http://themezee.com/themes/glades/?utm_source=customizer&utm_medium=textlink&utm_campaign=glades&utm_content=theme-page' ),
+		'themeURL'	=> esc_url( 'https://themezee.com/themes/glades/?utm_source=customizer&utm_medium=textlink&utm_campaign=glades&utm_content=theme-page' ),
 		'themeLabel'	=> esc_html__( 'Theme Page', 'glades' ),
-		'docuURL'	=> esc_url( 'http://themezee.com/docs/glades-documentation/?utm_source=customizer&utm_medium=textlink&utm_campaign=glades&utm_content=documentation' ),
+		'docuURL'	=> esc_url( 'https://themezee.com/docs/glades-documentation/?utm_source=customizer&utm_medium=textlink&utm_campaign=glades&utm_content=documentation' ),
 		'docuLabel'	=>  esc_html__( 'Theme Documentation', 'glades' ),
 		'rateURL'	=> esc_url( 'http://wordpress.org/support/view/theme-reviews/glades?filter=5' ),
 		'rateLabel'	=> esc_html__( 'Rate this theme', 'glades' ),

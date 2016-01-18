@@ -323,7 +323,7 @@ function glades_display_credit_link() {
 		
 	printf( esc_html__( 'Powered by %1$s and %2$s.', 'glades' ), 
 		'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
-		'<a href="http://themezee.com/themes/glades/" title="Glades WordPress Theme">Glades</a>'
+		'<a href="https://themezee.com/themes/glades/" title="Glades WordPress Theme">Glades</a>'
 	); 
 }
 
