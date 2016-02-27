@@ -2,7 +2,7 @@
 Theme Name: Glades
 Theme URI: https://themezee.com/themes/glades/
 Description: Glades is a modern Magazine Theme for a local news or any other content focused website. The magazine-styled homepage is built with WordPress core features like Customizer and Widgets, which makes the setup super fast, flexible and easy. The theme comes with a beautiful Featured Content area and responsive design, looking great on every device.
-Version: 1.1.6
+Version: 1.1.7
 Author: ThemeZee
 Author URI: https://themezee.com
 Tags: two-columns, light, blue, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, red, silver, white, green, gray
@@ -794,6 +794,29 @@ input, textarea, select {
 	margin: 0.5em 0 1em;
 }
 
+/* Post Navigation */
+.post-navigation {
+	margin: 0 0 2em;
+	padding: 0.5em 0.5em 0;
+	line-height: 1.5;
+	color: #777;
+	border-top: 2px solid #ddd;
+}
+.post-navigation .nav-links:before,
+.post-navigation .nav-links:after {
+	content: "";
+	display: table;
+}
+.post-navigation .nav-links:after {
+	clear: both;
+}
+.post-navigation .nav-links .nav-previous {
+	float: left;
+}
+.post-navigation .nav-links .nav-next {
+	float: right;
+}
+
 /* Archives and Search Heading */
 .page-header {
 	margin-bottom: 2em;
@@ -848,27 +871,24 @@ input, textarea, select {
 	border: 1px solid #1188cc;
 }
 
-/* Post Navigation */
-.post-navigation {
-	margin: 0 0 2em;
-	padding: 0.5em 0.5em 0;
+/* Infinite Scroll Pagination */
+.infinite-scroll .post-pagination {
+	display: none;
+}
+.infinite-scroll #infinite-handle span {
+	display: inline-block;
+	padding: 0.5em 0.8em;
+	text-decoration: none;
+	text-align: center;
 	line-height: 1.5;
-	color: #777;
-	border-top: 2px solid #ddd;
+	color: #fff;
+	background: #1188cc;
+	font-family: 'Contrail One', Tahoma, Arial;
+	font-size: 0.95em;
+	text-transform: uppercase;
 }
-.post-navigation .nav-links:before,
-.post-navigation .nav-links:after {
-	content: "";
-	display: table;
-}
-.post-navigation .nav-links:after {
-	clear: both;
-}
-.post-navigation .nav-links .nav-previous {
-	float: left;
-}
-.post-navigation .nav-links .nav-next {
-	float: right;
+.infinite-scroll #infinite-handle span:hover {
+	background: #151515;
 }
 
 /* Breadcrumbs */
@@ -993,8 +1013,6 @@ big, .big_tag {
 	font-size: 1.3em;
 }
 ins {
-	padding: 1px 2px;
-	background: #ffa;
 	text-decoration: none;
 }
 code, pre {

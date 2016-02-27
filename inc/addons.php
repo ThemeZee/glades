@@ -19,6 +19,13 @@ function glades_theme_addons_setup() {
 	add_theme_support( 'themezee-breadcrumbs' );
 	add_theme_support( 'themezee-related-posts' );
 	
+	// Add Support for Infinite Scroll
+	add_theme_support( 'infinite-scroll', array(
+		'type' 		=> 'click',
+		'container' => 'content',
+		'render'    => 'glades_infinite_scroll_render',
+	) );
+	
 }
 
 
@@ -63,3 +70,19 @@ function glades_theme_addons_image_sizes() {
 	add_image_size( 'themezee-related-posts', 490, 280, true );
 
 }
+
+
+/**
+ * Custom render function for Infinite Scroll.
+ */
+function glades_infinite_scroll_render() {
+
+	// Get Theme Options from Database
+	$theme_options = glades_theme_options();
+	
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'content', $theme_options['posts_length'] );
+	}
+	
+} // glades_infinite_scroll_render()
