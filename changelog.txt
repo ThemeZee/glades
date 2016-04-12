@@ -2,6 +2,10 @@
 Glades Changelog
 ===================================
 
+Version 1.1.8
+-----------------------------------
+
+
 Version 1.1.7
 -----------------------------------
 [added] support for Jetpack Infinite Scroll feature
