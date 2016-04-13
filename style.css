@@ -2,7 +2,7 @@
 Theme Name: Glades
 Theme URI: https://themezee.com/themes/glades/
 Description: Glades is a modern Magazine Theme for a local news or any other content focused website. The magazine-styled homepage is built with WordPress core features like Customizer and Widgets, which makes the setup super fast, flexible and easy. The theme comes with a beautiful Featured Content area and responsive design, looking great on every device.
-Version: 1.1.7
+Version: 1.1.8
 Author: ThemeZee
 Author URI: https://themezee.com
 Tags: two-columns, light, blue, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, red, silver, white, green, gray
@@ -276,21 +276,32 @@ input, textarea, select {
 	max-width: 100%;
 }
 #logo .site-title {
+	display: inline-block;
 	padding: 0.7em 0.2em 0.2em;
 	font-size: 2.3em;
 	color: #fff;
 	font-family: 'Contrail One', Tahoma, Arial;
 }
-#logo a:hover {
-	text-decoration: none;
+#logo .site-title a:link, 
+#logo .site-title a:visited {
+	color: #fff;
 }
-#logo a:hover .site-title {
+#logo .site-title a:hover,
+#logo .site-title a:active {
 	color: #eee;
 	text-decoration: none;
 }
 #logo .site-description {
 	margin-top: 0.4em;
 	color: #eee;
+}
+#logo .custom-logo {
+	margin: 1em 1.5em 1em 0;
+	padding: 0;
+	border: none;
+	vertical-align: top;
+	max-width: 100%;
+	height: auto;
 }
 
 /* Custom Header Image */
