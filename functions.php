@@ -7,14 +7,21 @@ add_action('wp_enqueue_scripts', 'glades_enqueue_scripts');
 
 function glades_enqueue_scripts() {
 
+	// Get Theme Version
+	$theme_version = wp_get_theme()->get( 'Version' );
+	
 	// Register and Enqueue Stylesheet
-	wp_enqueue_style('glades-stylesheet', get_stylesheet_uri());
+	wp_enqueue_style( 'glades-stylesheet', get_stylesheet_uri(), array(), $theme_version );
 	
 	// Register Genericons
-	wp_enqueue_style('glades-genericons', get_template_directory_uri() . '/css/genericons/genericons.css');
+	wp_enqueue_style( 'glades-genericons', get_template_directory_uri() . '/css/genericons/genericons.css', array(), '3.4.1' );
+	
+	// Register and Enqueue HTML5shiv to support HTML5 elements in older IE versions
+	wp_enqueue_script( 'glades-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3' );
+	wp_script_add_data( 'glades-html5shiv', 'conditional', 'lt IE 9' );
 
 	// Register and enqueue navigation.js
-	wp_enqueue_script('glades-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
+	wp_enqueue_script( 'glades-jquery-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160421' );
 
 	// Register Comment Reply Script for Threaded Comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -22,7 +29,7 @@ function glades_enqueue_scripts() {
 	}
 
 	// Register and Enqueue Fonts
-	wp_enqueue_style('glades-default-fonts', glades_google_fonts_url(), array(), null );
+	wp_enqueue_style( 'glades-default-fonts', glades_google_fonts_url(), array(), null );
 
 }
 
