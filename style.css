@@ -2651,7 +2651,7 @@ embed, iframe, object, video {
 }
 
 /* Big Screens Navi Fix | >720px */
-@media only screen and (min-width: 55em) {
+@media only screen and (min-width: 55.001em) {
 	/* ensure navigation is visible on desktop version */
 	#mainnav-menu, #topnav-menu {
 		display: block !important;
@@ -2660,7 +2660,7 @@ embed, iframe, object, video {
 		background: rgba(255, 255, 255, 0.075);
 	}
 }
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: 30.001em) {
 	/* ensure social icons are visible on desktop version */
 	#navi-social-icons #social-icons-menu {
 		display: block !important;
