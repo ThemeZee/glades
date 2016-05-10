@@ -8,7 +8,8 @@ class Glades_Category_Posts_Grid_Widget extends WP_Widget {
 		// Setup Widget
 		$widget_ops = array(
 			'classname' => 'glades_category_posts_grid', 
-			'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'glades' )
+			'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'glades' ),
+			'customize_selective_refresh' => true,
 		);
 		parent::__construct('glades_category_posts_grid', sprintf( esc_html__( 'Category Posts: Grid (%s)', 'glades' ), wp_get_theme()->Name ), $widget_ops);
 		
