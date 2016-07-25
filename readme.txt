@@ -26,6 +26,9 @@ For more information about Glades please go to https://themezee.com/themes/glade
 
 == Changelog ==
 
+= 1.2.3 =
+* fixed dropdown menus on mobile navigation menus
+
 = 1.2.2 =
 * fixed styling of main navigation menu with default pages
 
