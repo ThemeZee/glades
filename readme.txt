@@ -26,6 +26,9 @@ For more information about Glades please go to https://themezee.com/themes/glade
 
 == Changelog ==
 
+= 1.2.4 =
+* added Right-to-Left language support
+
 = 1.2.3 =
 * fixed dropdown menus on mobile navigation menus
 
