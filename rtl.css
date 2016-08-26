@@ -376,6 +376,10 @@ blockquote cite {
 		float: right;
 	}
 
+	.top-navigation-menu li {
+		width: 100%;
+	}
+
 	.top-navigation-menu a {
 		clear: right;
 	}
@@ -427,9 +431,17 @@ blockquote cite {
 		float: right;
 	}
 
+	#mainnav {
+		width: 100%;
+	}
+
 	.main-navigation-menu {
 		float: right;
 		text-align: right;
+	}
+
+	.main-navigation-menu li {
+		width: 100%;
 	}
 
 	.main-navigation-menu a {
