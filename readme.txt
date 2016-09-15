@@ -26,6 +26,10 @@ For more information about Glades please go to https://themezee.com/themes/glade
 
 == Changelog ==
 
+= 1.2.5 =
+* fixed mobile menus on RTL language sites
+* moved Theme Links to Theme Options panel dropdown
+
 = 1.2.4 =
 * added Right-to-Left language support
 
