@@ -119,7 +119,7 @@ function glades_customize_preview_js() {
 add_action( 'customize_controls_print_styles', 'glades_customize_preview_css' );
 
 function glades_customize_preview_css() {
-	wp_enqueue_style( 'glades-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20160915' );
+	wp_enqueue_style( 'glades-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20161214' );
 
 }
 
@@ -142,7 +142,7 @@ function glades_customize_theme_links() {
 			</p>
 
 			<p>
-				<a href="http://preview.themezee.com/glades/?utm_source=theme-info&utm_medium=textlink&utm_campaign=glades&utm_content=demo" target="_blank">
+				<a href="http://preview.themezee.com/?demo=glades&utm_source=theme-info&utm_medium=textlink&utm_campaign=glades&utm_content=demo" target="_blank">
 					<?php esc_html_e( 'Theme Demo', 'glades' ); ?>
 				</a>
 			</p>
