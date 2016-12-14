@@ -300,7 +300,7 @@ input, textarea, select {
 	text-decoration: none;
 }
 #logo .site-description {
-	margin-top: 0.4em;
+	margin: 0.2em 0.4em 1.2em;
 	color: #eee;
 }
 #logo .custom-logo {
