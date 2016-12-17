@@ -45,7 +45,7 @@ function glades_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'glades' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/glades/', 'glades' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=glades&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'glades' ); ?></a>
-				<a href="http://preview.themezee.com/?demo=glades&utm_source=theme-info&utm_medium=textlink&utm_campaign=glades&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'glades' ); ?></a>
+				<a href="http://preview.themezee.com/?demo=glades&utm_source=theme-info&utm_campaign=glades" target="_blank"><?php esc_html_e( 'Theme Demo', 'glades' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/glades-documentation/', 'glades' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=glades&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'glades' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/glades/reviews/?filter=5', 'glades' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'glades' ); ?></a>
 			</p>
