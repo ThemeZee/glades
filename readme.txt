@@ -26,6 +26,9 @@ For more information about Glades please go to https://themezee.com/themes/glade
 
 == Changelog ==
 
+= 1.2.7 =
+* added Magazine Homepage widgets to blog index
+
 = 1.2.6 =
 * added editor shortcuts and instant live preview for site title and tagline in Customizer
 * changed demo links in Customizer and Theme Info
