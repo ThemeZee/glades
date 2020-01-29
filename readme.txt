@@ -26,6 +26,9 @@ For more information about Glades please go to https://themezee.com/themes/glade
 
 == Changelog ==
 
+= 1.4.3 =
+* added Skip-to-Content link for improved accessibility
+
 = 1.4.2 =
 * fixed missing featured content tag bug in WordPress Block Editor
 
