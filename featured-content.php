@@ -35,7 +35,7 @@ $loop_count = 1;
 							
 						<?php else: ?>
 
-							<img src="<?php echo get_template_directory_uri(); ?>/images/default-featured-content.png" class="default-featured-image wp-post-image" />
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/images/default-featured-content.png' ); ?>" class="default-featured-image wp-post-image" />
 
 						<?php endif; ?>
 						
@@ -71,7 +71,7 @@ $loop_count = 1;
 							
 						<?php else: ?>
 
-							<img src="<?php echo get_template_directory_uri(); ?>/images/default-featured-content-small.png" class="default-featured-image wp-post-image" />
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/images/default-featured-content-small.png' ); ?>" class="default-featured-image wp-post-image" />
 
 						<?php endif; ?>
 						
